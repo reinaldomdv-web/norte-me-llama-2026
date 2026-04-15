@@ -158,9 +158,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
       <div class="ml"><div class="mll d" style="border-top-color:#D4920A"></div>🚆 Tren</div>
       <div class="ml"><div class="mll d" style="border-top-color:#5A3A18"></div>🚌 Bus</div>
       <div class="ml"><div class="mll d" style="border-top-color:#C43030"></div>↩ Regreso</div>
-      <div class="ml"><div class="mld" style="background:#DC2626"></div>EXTREMO</div>
-      <div class="ml"><div class="mld" style="background:#EA580C"></div>ALTO</div>
-      <div class="ml"><div class="mld" style="background:#CA8A04"></div>MEDIO</div>
+
     </div>
   </div>
   <!-- TRAMOS -->
@@ -510,19 +508,7 @@ const WP=[
   {lat:49.28,lng:-123.12,t:'Vancouver, BC 🇨🇦',s:'~21 Septiembre · FIN RUTA CRÍTICA',b:'Decisión de ruta bajada. Ver pestaña ⬇️ Bajada.',cost:'🚌 ebus PG→VAN: ~$120–185 USD',p:true,c:'#C43030',temps:[{t:'Vancouver Sep: 14–18°C',tp:'m'}]},
 ];
 
-const FW=[
-  {lat:44.5,lng:-68.5,lv:'m',e:'🫎🪲',n:'Maine/NB: Alces + Black flies',d:'Alces al amanecer/atardecer. 400 colisiones/año NB. Black flies PICO mayo–junio.'},
-  {lat:52.9,lng:-117.9,lv:'h',e:'🐻🦌',n:'Jasper/Banff: Grizzly + Elk',d:'Elk celo finales Ago–Oct. Grizzly presentes. Parks Canada: "extremadamente agresivos."'},
-  {lat:56.0,lng:-129.5,lv:'x',e:'🐻',n:'Meziadin/Cassiar: GRIZZLY DENSO',d:'Temporada salmón Jul–Sep. "Más osos que personas."'},
-  {lat:57.1,lng:-130.1,lv:'x',e:'🐻🦟',n:'Bell-Irving: GRIZZLY + Mosquitos',d:'"5 osos negros en un día." Mosquitos extremos.'},
-  {lat:59.4,lng:-126.1,lv:'x',e:'⚠️🐻',n:'Liard Hot Springs km 765',d:'1997: PEOR ataque oso negro NA. 2 muertos. Cerco eléctrico instalado.'},
-  {lat:60.0,lng:-128.7,lv:'h',e:'🦬🐺',n:'Watson Lake: Bisontes + Lobo',d:'~1.000 bisontes. Lobo atacó ciclista 2013 (CBC).'},
-  {lat:64.8,lng:-147.7,lv:'h',e:'🫎',n:'Fairbanks: Alces 2026',d:'ADF&G: aumento ataques en ciclovías 2026.'},
-  {lat:68.0,lng:-149.7,lv:'x',e:'🐻🦟',n:'Dalton MP 245–414: EXTREMO',d:'Grizzly tundra abierta. Bear canister OBLIGATORIO. 17 billones mosquitos/año.'},
-  {lat:47.5,lng:-121.8,lv:'h',e:'🦁',n:'North Bend WA: PUMAS',d:'Ataque fatal 2018. 5 ciclistas atacadas 2024.'},
-  {lat:32.5,lng:-111.0,lv:'h',e:'🐍🦂',n:'Arizona: Cascabeles + Escorpiones',d:'Bark scorpion TREPA. Linterna UV esencial.'},
-  {lat:24.5,lng:-107.0,lv:'h',e:'🐕🐍',n:'Sinaloa: Perros + C. basiliscus',d:'Perros ferales: amenaza #1 ciclistas. C. basiliscus: víbora más peligrosa de la ruta.'},
-];
+// Fauna data in Fauna tab only
 
 function iM(){
   if(MAP){MAP.invalidateSize();return;}
@@ -562,13 +548,7 @@ function iM(){
     L.marker([w.lat,w.lng],{icon}).addTo(MAP).bindPopup(pop,{maxWidth:280});
   });
 
-  // Wildlife emoji markers
-  const DC={x:'#DC2626',h:'#EA580C',m:'#CA8A04'},DS={x:22,h:18,m:14};
-  FW.forEach(f=>{
-    const c=DC[f.lv],s=DS[f.lv];
-    const icon=L.divIcon({className:'',html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+c+';border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:'+(s*.52)+'px;line-height:1">'+f.e+'</div>',iconSize:[s,s],iconAnchor:[s/2,s/2]});
-    L.marker([f.lat,f.lng],{icon}).addTo(MAP).bindPopup('<div class="pt">'+f.n+'</div><div class="pf" style="margin-top:6px">'+f.d+'</div>',{maxWidth:260});
-  });
+
 
   MAP.invalidateSize();
   setTimeout(()=>MAP.invalidateSize(),500);
