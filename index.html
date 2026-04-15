@@ -155,9 +155,10 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   </div>
   <div class="alrt"><b>⚠️ LÍMITES EL NIÑO 2026:</b> Salir Prudhoe Bay <b>antes 20 Ago</b> · Terminar Cassiar <b>antes 20 Sep</b> · Visa UY+MX estampadas ✅</div>
   <!-- MAP -->
-  <div id="pane-map" class="pane on">
+  <div id="pane-map" class="pane on" style="position:relative">
     <div id="map"></div>
-    <div class="mleg">
+    <div id="seg-info-panel" style="display:none;position:absolute;bottom:80px;left:10px;right:10px;background:#EEE5CC;border-radius:8px;padding:12px 14px;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:1000;border-left:4px solid #E05C10;max-height:45vh;overflow-y:auto;position:relative"></div>
+<div class="mleg">
       <div class="ml"><div class="mll" style="background:#E05C10"></div>🚲 Bici norte</div>
       <div class="ml"><div class="mll d" style="border-top-color:#D4920A"></div>🚆 Tren VIA</div>
       <div class="ml"><div class="mll d" style="border-top-color:#5A3A18"></div>🚌 Bus</div>
@@ -180,64 +181,64 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
     <div class="sdet"><div class="sno">Amtrak NE Regional New Carrollton→Brunswick ME (directo, sin paradas). ⚠️ Solo 3 espacios de bici por tren en el Downeaster — reservar anticipado en amtrak.com.</div><div class="sts"><span class="tp m">Maryland: 18–22°C</span><span class="tp c">Brunswick ME: 8–15°C</span></div>
     <div class="sc">🚆 Amtrak New Carrollton→Brunswick (2p): ~$140–180 USD + bicis ~$40<br>💰 Total: ~$180–220 USD</div></div></div>
     <!-- #02 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#02</span><span class="sm">🚲 Brunswick ME → West Quoddy Head ✅ 4ª ESQUINA</span><div class="sd2">6–16 Mayo · 10 días · 310 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#02</span><button onclick="event.stopPropagation();focusSeg('s02')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Brunswick ME → West Quoddy Head ✅ 4ª ESQUINA</span><div class="sd2">6–16 Mayo · 10 días · 310 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Ruta US-1 / Bold Coast. Destino: West Quoddy Head Lighthouse, Lubec ME — esquina NE del continente. ¡4ª y última esquina! Zona remota desde Ellsworth — cargar provisiones 2 días.</div><div class="sts"><span class="tp c">Maine Mayo: 10–18°C</span><span class="tp c">Noche: 4–8°C</span></div>
     <div class="sc">⛺ State Parks Maine: $20–25/noche</div>
     <div class="sf">🫎 Alces: amanecer/atardecer · 🐻 Osos negros: colgar comida · 🪲 Black flies PICO mayo: red cabeza + DEET</div></div></div>
     <!-- #03 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#03</span><span class="sm">🚲 West Quoddy → Moncton, NB 🇨🇦</span><div class="sd2">17–21 Mayo · 4 días · 250 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#03</span><button onclick="event.stopPropagation();focusSeg('s03')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 West Quoddy → Moncton, NB 🇨🇦</span><div class="sd2">17–21 Mayo · 4 días · 250 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">⚠️ CRUCE CANADÁ: Calais→St. Stephen NB (NO Campobello — ferry no opera mayo). Pasaportes con visa estampada.</div><div class="sts"><span class="tp c">NB Mayo: 12–20°C</span></div>
     <div class="sc">⛺ Provincial parks NB: $15–22 CAD/noche</div>
     <div class="sf">🫎 NB: 400 colisiones alce/año</div></div></div>
     <!-- #04 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#04</span><span class="sm">Moncton → Montréal · VIA Rail "The Ocean"</span><div class="sd2">~22 Mayo · 9 horas · ~650 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#04</span><button onclick="event.stopPropagation();focusSeg('s04')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Moncton → Montréal · VIA Rail "The Ocean"</span><div class="sd2">~22 Mayo · 9 horas · ~650 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
     <div class="sdet"><div class="sno">Vagón equipajes, bicis sin caja. Sale lun/mié/vie desde Moncton. Llega a Gare Centrale Montréal.</div><div class="sts"><span class="tp m">Montréal Mayo: 18–24°C</span></div>
     <div class="sc">🚆 Economy 2p: ~$180–260 CAD + $50 bicis<br>💰 Total: ~$170–230 USD</div>
     <div class="sni">❄️ Mayo en Quebec: sin riesgo de nieve. Último nevado promedio Montréal: mediados de abril.</div></div></div>
     <!-- #05 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#05</span><span class="sm">🚲 Montréal → Québec City · Route Verte</span><div class="sd2">23–26 Mayo · 4 días · 260 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#05</span><button onclick="event.stopPropagation();focusSeg('s05')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Montréal → Québec City · Route Verte</span><div class="sd2">23–26 Mayo · 4 días · 260 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Route Verte 5 / Chemin du Roy — plana, señalizada, junto al St. Lawrence. 500+ establecimientos "Bienvenue cyclistes!"</div><div class="sts"><span class="tp m">Québec Mayo: 16–22°C</span><span class="tp c">Noche: 8–12°C</span></div>
     <div class="sc">⛺ Camping provincial QC: $20–28 CAD/noche</div>
     <div class="sf">🪲 BLACK FLIES PICO — PEOR tramo insectos mayo–junio. Red para cabeza + DEET 30%+ obligatorio.</div></div></div>
     <!-- #06 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#06</span><span class="sm">🚲 Québec City → Ottawa → Toronto</span><div class="sd2">27 Mayo–8 Jun · 13 días · 800 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#06</span><button onclick="event.stopPropagation();focusSeg('s06')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Québec City → Ottawa → Toronto</span><div class="sd2">27 Mayo–8 Jun · 13 días · 800 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Route Verte → Ottawa → Lake Ontario Waterfront Trail → Toronto. Alt. tren: VIA Rail Montréal→Toronto — confirmar política bicis con flota Venture en viarail.ca (1-888-842-7245).</div><div class="sts"><span class="tp w">Toronto Junio: 22–28°C</span><span class="tp m">Noche: 12–16°C</span></div>
     <div class="sc">⛺ Camping: $12–28 CAD/noche<br>🚆 Alt. tren MTL→TOR: ~$80–125 CAD/p + $25 bici</div></div></div>
     <!-- #07 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#07</span><span class="sm">Toronto → Winnipeg · VIA Rail "The Canadian"</span><div class="sd2">~10 Jun · 2 noches · ~2.200 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#07</span><button onclick="event.stopPropagation();focusSeg('s07')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Toronto → Winnipeg · VIA Rail "The Canadian"</span><div class="sd2">~10 Jun · 2 noches · ~2.200 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
     <div class="sdet"><div class="sno">El tren más icónico de Canadá. Cruce del Escudo Canadiense + Praderas. Mar/Jue/Sáb desde Toronto. Vagón equipajes sin caja. Reservar 6–8 semanas antes.</div>
     <div class="sc">🚆 Economy 2p: ~$130–200 CAD/p + $50 bicis<br>💰 Total: ~$230–335 USD</div></div></div>
     <!-- #08 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#08</span><span class="sm">🌾 Winnipeg → Melville, SK · Pradera</span><div class="sd2">12–18 Jun · 6 días · 400 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#08</span><button onclick="event.stopPropagation();focusSeg('s08')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🌾 Winnipeg → Melville, SK · Pradera</span><div class="sd2">12–18 Jun · 6 días · 400 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Hwy 16 Yellowhead — cielos infinitos, silos de grano. Único tramo de pradera del viaje. Vientos 15–20 km/h. Tormentas eléctricas frecuentes. Cargar agua extra.</div><div class="sts"><span class="tp w">Pradera Junio: 24–28°C</span><span class="tp m">Noche: 10–14°C</span></div>
     <div class="sc">⛺ Camping municipal: $10–15 CAD/noche</div></div></div>
     <!-- #09 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#09</span><span class="sm">Melville, SK → Jasper, AB · The Canadian</span><div class="sd2">~19 Jun · 1 noche · ~1.400 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#09</span><button onclick="event.stopPropagation();focusSeg('s09')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Melville, SK → Jasper, AB · The Canadian</span><div class="sd2">~19 Jun · 1 noche · ~1.400 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
     <div class="sdet"><div class="sno">Pradera → Edmonton → Rocallosas → Jasper NP. Tramo más fotogénico del viaje. Comprar segmento separado Melville→Jasper en viarail.ca.</div><div class="sts"><span class="tp m">Jasper Junio: 16–22°C</span><span class="tp c">Noche montaña: 4–8°C</span></div>
     <div class="sc">🚆 Economy 2p: ~$95–150 CAD/p + $50 bicis<br>💰 Total: ~$178–260 USD</div>
     <div class="sf">🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio desde aquí</div></div></div>
     <!-- #10 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#10</span><span class="sm">Jasper → New Hazelton, BC · VIA "The Skeena"</span><div class="sd2">~20–22 Jun · 2 días · ~1.160 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#10</span><button onclick="event.stopPropagation();focusSeg('s10')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Jasper → New Hazelton, BC · VIA "The Skeena"</span><div class="sd2">~20–22 Jun · 2 días · ~1.160 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
     <div class="sdet"><div class="sno">Uno de los trenes más espectaculares de Canadá. ⚠️ Parada OBLIGATORIA en Prince George — necesita noche en camping (~$30–40 CAD). Sale mar/jue/sáb desde Jasper.</div>
     <div class="sc">🚆 Skeena Economy 2p: ~$130–200 CAD/p + $50 bicis<br>🏕️ Prince George camping: ~$30–40 CAD<br>💰 Total: ~$310–430 USD</div></div></div>
     <!-- #11 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#11</span><span class="sm">🏔️ New Hazelton → Watson Lake · Cassiar Hwy</span><div class="sd2">24 Jun–6 Jul · 13 días · 725 km</div></div><span class="sb" style="background:var(--dh);color:white">🐻 FAUNA ALTA</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#11</span><button onclick="event.stopPropagation();focusSeg('s11')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🏔️ New Hazelton → Watson Lake · Cassiar Hwy</span><div class="sd2">24 Jun–6 Jul · 13 días · 725 km</div></div><span class="sb" style="background:var(--dh);color:white">🐻 FAUNA ALTA</span></div>
     <div class="sdet"><div class="sg"><div><div class="sl">Superficie</div><div class="sv">99% pavimento</div></div><div><div class="sl">Gap sin servicio</div><div class="sv">Bell 2→Dease: 157 km</div></div></div>
     <div class="sno">Cassiar Hwy 37 — ruta épica hacia el norte. Jade City km 575: famosa hospitalidad a ciclistas. Sin cobertura celular → Starlink/InReach esencial.</div><div class="sts"><span class="tp m">Cassiar Julio: 16–22°C</span><span class="tp c">Noche: 5–10°C</span><span class="tp c">Lluvia frecuente</span></div>
     <div class="sc">⛺ Crown Land BC: gratis · Campings BC: $12–22 CAD/noche</div>
     <div class="sf">🐻 EXTREMO: "Más osos que personas." Grizzly+oso negro densos, esp. Bob Quinn→Kitwanga (salmón Jul–Sep)<br>🫎 ALTO: alce más mortal que oso en BC · 🐺 Lobos activos · 🦟 Mosquitos+horse flies EXTREMOS</div></div></div>
     <!-- #12 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#12</span><span class="sm">🚲 Watson Lake → Whitehorse · Alaska Hwy</span><div class="sd2">7–14 Jul · 7 días · 440 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#12</span><button onclick="event.stopPropagation();focusSeg('s12')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Watson Lake → Whitehorse · Alaska Hwy</span><div class="sd2">7–14 Jul · 7 días · 440 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Watson Lake: "Bosque de Señales" (11.000+ señales del mundo — foto obligatoria). Whitehorse: último gran reabastecimiento. Comprar bear spray (~$40 CAD, más barato que Alaska).</div><div class="sts"><span class="tp w">Yukón Julio: 18–24°C</span><span class="tp w">20+ horas de luz</span></div>
     <div class="sc">⛺ Campings Gobierno Yukón: $12 CAD/noche<br>🐻 Bear spray Whitehorse: ~$40 CAD</div>
     <div class="sf">🦬 BISONTES km 750–900: ciclista perseguido documentado (2023). Esperar que pasen.<br>🐺 Ataque lobo a ciclista (Mac Hollan, 2013, CBC/Alaska Public Media)<br>⚠️ Liard Hot Springs km 765: PEOR ataque oso negro NA (1997, 2 muertos)</div></div></div>
     <!-- #13 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#13</span><span class="sm">🚲 Whitehorse → Fairbanks, AK · Alaska Hwy</span><div class="sd2">15–27 Jul · 12 días · 700 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#13</span><button onclick="event.stopPropagation();focusSeg('s13')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Whitehorse → Fairbanks, AK · Alaska Hwy</span><div class="sd2">15–27 Jul · 12 días · 700 km</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
     <div class="sdet"><div class="sno">Cruce frontera Beaver Creek YK→Tok AK (24/7). En Fairbanks: revisión total + 6–7 días comida para la Dalton. Bear canister en REI local.</div><div class="sts"><span class="tp w">Fairbanks Julio: 19–23°C</span><span class="tp w">22 horas de luz</span></div>
     <div class="sc">⛺ BLM/State land: gratis · 🛒 Alaska: ~$35 USD/día</div>
     <div class="sf">🐻 Grizzly+oso negro — spray en cuerpo obligatorio<br>🫎 2026: ADF&amp;G reporta aumento de ataques de alces en Fairbanks</div></div></div>
     <!-- #14 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#14</span><span class="sm">🏔️ Fairbanks → PRUDHOE BAY 🏁 · Dalton Hwy</span><div class="sd2">28 Jul–10 Ago · 14 días · 650 km</div></div><span class="sb" style="background:var(--dx);color:white">⚠️ DALTON</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#14</span><button onclick="event.stopPropagation();focusSeg('s14')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🏔️ Fairbanks → PRUDHOE BAY 🏁 · Dalton Hwy</span><div class="sd2">28 Jul–10 Ago · 14 días · 650 km</div></div><span class="sb" style="background:var(--dx);color:white">⚠️ DALTON</span></div>
     <div class="sdet"><div class="sg"><div><div class="sl">Superficie</div><div class="sv">75% grava</div></div><div><div class="sl">Atigun Pass</div><div class="sv">1.444m · 12% grade</div></div><div><div class="sl">Sin servicios</div><div class="sv">388 km (Coldfoot→)</div></div><div><div class="sl">Camiones/día</div><div class="sv">~160 petroleros</div></div></div>
     <div class="sno">⚠️ MÁXIMA EXIGENCIA. Coldfoot km 280: ÚLTIMO servicio. Cargar 6–7 días comida. InReach satelital OBLIGATORIO. Sin cobertura celular. Al llegar Deadhorse: Arctic Ocean Shuttle ($89/p — dar pasaporte anticipado para verificación).</div>
     <div class="sts"><span class="tp c">Prudhoe Bay Ago: 10–12°C</span><span class="tp f">Noche: 4–6°C</span><span class="tp f">Atigun Pass: sensación -2°C</span><span class="tp f">Nieve posible CUALQUIER día</span></div>
@@ -248,26 +249,26 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
     <div class="ph r">▼ REGRESO SUR — ~10 Ago → ~21 Sep</div>
 
     <!-- #15 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#15</span><span class="sm">↩️ Prudhoe Bay → Fairbanks · Dalton regreso</span><div class="sd2">~10–20 Ago · 11 días · 650 km</div></div><span class="sb" style="background:var(--dh);color:white">🚲 REGRESO</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#15</span><button onclick="event.stopPropagation();focusSeg('s15')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">↩️ Prudhoe Bay → Fairbanks · Dalton regreso</span><div class="sd2">~10–20 Ago · 11 días · 650 km</div></div><span class="sb" style="background:var(--dh);color:white">🚲 REGRESO</span></div>
     <div class="sdet"><div class="sno">Regreso por la Dalton. Temperatura baja rápido. Si hay retraso, usar Bus Dalton Highway Express (~$210 USD/p, 2×/semana) para ahorrar 10 días.</div><div class="sts"><span class="tp c">Agosto tardío: 8–14°C</span><span class="tp f">Noche: 1–5°C</span><span class="tp f">Sensación ártica: -8°C</span></div>
     <div class="sc">⛺ BLM: gratis · 🚌 Alt. Bus Dalton Express: ~$420 USD (2p + bicis)</div></div></div>
     <!-- #16 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#16</span><span class="sm">🚲 Fairbanks → Anchorage · Parks Highway</span><div class="sd2">~21–30 Ago · 10 días · 580 km</div></div><span class="sb" style="background:var(--dh);color:white">🚲 REGRESO</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#16</span><button onclick="event.stopPropagation();focusSeg('s16')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Fairbanks → Anchorage · Parks Highway</span><div class="sd2">~21–30 Ago · 10 días · 580 km</div></div><span class="sb" style="background:var(--dh);color:white">🚲 REGRESO</span></div>
     <div class="sdet"><div class="sno">Parks Highway — una de las rutas más bellas de Alaska. Vistas del Denali (6.190m). Anchorage: revisión completa de bicis.</div><div class="sts"><span class="tp m">Anchorage Agosto: 14–18°C</span><span class="tp c">Noche: 7–10°C</span></div>
     <div class="sc">⛺ State campgrounds: $10–20/noche · 🛒 ~$35 USD/día</div>
     <div class="sf">🫎 ALTO 2026: aumento de cargas de alces en Anchorage (ADF&amp;G) · 🐻 Grizzly presentes</div></div></div>
     <!-- #17 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#17</span><span class="sm">Anchorage → Whitehorse · Bus</span><div class="sd2">~31 Ago · 1–2 días · ~900 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#17</span><button onclick="event.stopPropagation();focusSeg('s17')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Anchorage → Whitehorse · Bus</span><div class="sd2">~31 Ago · 1–2 días · ~900 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
     <div class="sdet"><div class="sno">⚠️ CONFIRMAR antes de salir: servicio irregular. Llamar para confirmar aceptan bicis cargadas. Alt: pedalear Anchorage→Tok (700 km) y tomar bus en Tok.</div>
     <div class="sc">🚌 Bus Anchorage→Whitehorse: ~$200–250 USD/p + ~$25 bicis<br>💰 Total: ~$450–550 USD</div></div></div>
     <!-- #18 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#18</span><span class="sm">🚲 Whitehorse → Prince George · Cassiar Sur</span><div class="sd2">1–20 Sep · 20 días · 1.165 km</div></div><span class="sb" style="background:var(--dh);color:white">⚠️ VENTANA</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#18</span><button onclick="event.stopPropagation();focusSeg('s18')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">🚲 Whitehorse → Prince George · Cassiar Sur</span><div class="sd2">1–20 Sep · 20 días · 1.165 km</div></div><span class="sb" style="background:var(--dh);color:white">⚠️ VENTANA</span></div>
     <div class="sdet"><div class="sno">⚠️ VENTANA CRÍTICA: No pasar del 20 de Sep en la Cassiar (ajustado +5 días por El Niño 2026). Mañanas 0–3°C. Bell 2 y Boya Lake cierran fines Sep. Otoño = colores increíbles para contenido.</div><div class="sts"><span class="tp c">Cassiar Sep: 8–15°C</span><span class="tp f">Madrugada: 0–3°C</span><span class="tp f">Sensación: -2 a -5°C</span><span class="tp f">Nieve posible en pasos</span></div>
     <div class="sc">⛺ Crown Land: gratis · Campings BC: $12–22 CAD/noche</div>
     <div class="sf">🐻 Grizzly pre-hibernación (hyperphagia) — más agresivos · 🫎 Alce en celo Sep–Oct</div>
     <div class="sni">❄️ El Niño 2026 extiende ventana hasta ~20 Sep (vs 15 Sep normal). Dease Lake: inicio nieve promedio 23 Sep. Alta confianza BC occidental.</div></div></div>
     <!-- #19 -->
-    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#19</span><span class="sm">Prince George → Vancouver · Bus ebus.ca</span><div class="sd2">~21 Sep · 1 día · ~780 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
+    <div class="sr" onclick="tS(this)"><div class="srt"><div><span class="sn">#19</span><button onclick="event.stopPropagation();focusSeg('s19')" style="margin-right:4px;background:#1E5F8A;color:white;border:none;border-radius:3px;padding:1px 5px;font-size:9px;cursor:pointer;font-family:'JetBrains Mono',monospace">🗺</button><span class="sm">Prince George → Vancouver · Bus ebus.ca</span><div class="sd2">~21 Sep · 1 día · ~780 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
     <div class="sdet"><div class="sno">ebus.ca — 3× diario. Bicis empacadas (caja Canadian Tire ~$15 CAD). Vancouver: descanso, reabastecimiento y decisión de ruta de bajada.</div>
     <div class="sc">🚌 ebus 2p: ~$120–160 CAD + bicis $40–100 CAD<br>💰 Total: ~$120–185 USD</div></div></div>
 
@@ -457,96 +458,306 @@ function tF(h){const z=h.closest('.fz');const w=z.classList.contains('open');doc
 function sB(id){['a','b','c'].forEach(t=>{document.getElementById('bp'+t).classList.toggle('on',t===id);const b=document.getElementById('bt'+t);b.className='bt'+(t===id?' o'+id:'');});}
 // MAP
 function iM(){
-  const map=L.map('map',{zoomControl:true,attributionControl:true}).setView([52,-110],3);
+  const map = L.map('map', {zoomControl:true, attributionControl:true}).setView([52,-110], 3);
+  window._map = map;
+
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
     maxZoom:19,
     attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains:'abcd',
-    crossOrigin:true
+    subdomains:'abcd', crossOrigin:true
   }).addTo(map);
 
-  // ROUTES
-  const biciN=[[38.95,-76.87],[43.91,-69.97],[44.81,-66.95],[46.09,-64.78],[45.50,-73.57],[46.81,-71.21],[45.42,-75.70],[43.65,-79.38],[49.90,-97.14],[50.93,-102.81],[52.87,-118.08],[53.92,-122.75],[55.25,-127.58],[57.10,-130.20],[58.43,-130.03],[60.06,-128.70],[60.72,-135.06],[63.34,-142.99],[64.84,-147.72],[67.25,-150.68],[70.20,-148.46]];
-  const trenSegs=[[[38.95,-76.87],[43.91,-69.97]],[[46.09,-64.78],[45.50,-73.57]],[[43.65,-79.38],[49.90,-97.14]],[[50.93,-102.81],[52.87,-118.08]],[[52.87,-118.08],[53.92,-122.75],[55.25,-127.58]]];
-  const busSegs=[[[61.22,-149.90],[60.72,-135.06]],[[53.92,-122.75],[49.28,-123.12]]];
-  const biciR=[[70.20,-148.46],[67.25,-150.68],[64.84,-147.72],[61.22,-149.90],[60.72,-135.06],[58.43,-130.03],[55.25,-127.58],[53.92,-122.75],[49.28,-123.12]];
-  const rutaA=[[49.28,-123.12],[47.61,-122.33],[45.51,-122.68],[44.05,-123.09],[41.76,-124.20],[37.77,-122.42],[34.05,-118.24],[32.72,-117.16],[32.51,-117.04],[31.87,-116.60],[27.97,-114.02],[24.14,-110.31],[23.25,-106.41]];
-  const rutaB=[[49.28,-123.12],[47.61,-122.33],[45.51,-122.68],[43.62,-116.20],[40.76,-111.89],[38.57,-109.55],[35.20,-111.65],[33.45,-112.07],[32.22,-110.97],[31.34,-110.93],[29.07,-110.96],[23.25,-106.41]];
-
-  L.polyline(biciN,{color:'#E05C10',weight:3,opacity:.9}).addTo(map);
-  L.polyline(biciR,{color:'#C43030',weight:2.5,dashArray:'4,3',opacity:.85}).addTo(map);
-  L.polyline(rutaA,{color:'#1E5F8A',weight:2,dashArray:'6,4',opacity:.8}).addTo(map);
-  L.polyline(rutaB,{color:'#4A7530',weight:2,dashArray:'4,4',opacity:.8}).addTo(map);
-  trenSegs.forEach(s=>L.polyline(s,{color:'#D4920A',weight:2.5,dashArray:'8,5',opacity:.85}).addTo(map));
-  busSegs.forEach(s=>L.polyline(s,{color:'#5A3A18',weight:2,dashArray:'5,4',opacity:.75}).addTo(map));
-
-  // WAYPOINTS
-  const WP=[
-    {lat:38.95,lng:-76.87,t:'🔧 New Carrollton, MD',s:'SALIDA · 5 Mayo 2026',b:'Bicis en storage cercano. Camping + Walmart para preparación (4–5 días). ⚠️ eTA Canada tramitar online ($7 CAD) antes de salir.',cost:'4–5 días de preparación',p:false,c:'#E05C10'},
-    {lat:44.81,lng:-66.95,t:'✅ West Quoddy Head, ME',s:'~17 Mayo · 4ª ESQUINA DEL CONTINENTE',b:'West Quoddy Head Lighthouse, Lubec ME — punto más noreste del territorio continental de EE.UU. ¡4ª y última esquina! (Key West ✅ + San Diego/Campo ✅ + Quoddy ✅)',cost:'⛺ Cobscook Bay SP: $20–25/noche',p:true,c:'#E05C10'},
-    {lat:46.09,lng:-64.78,t:'Moncton, NB 🇨🇦',s:'~21 Mayo · Primer cruce a Canadá',b:'Usar cruce Calais/St. Stephen NB. Presentar pasaportes con visa estampada. Nueva visa canadiense activa: múltiple entrada, 6 meses por visita.',cost:'⛺ Provincial parks NB: $15–22 CAD/noche',p:false,c:'#E05C10'},
-    {lat:45.50,lng:-73.57,t:'Montréal',s:'~23 Mayo · VIA Rail "The Ocean"',b:'Llega The Ocean en Gare Centrale. La Route Verte inicia aquí hacia Quebec City.',cost:'🚆 VIA Ocean Moncton→MTL: ~$170–230 USD',p:false,c:'#D4920A'},
-    {lat:43.65,lng:-79.38,t:'Toronto, ON',s:'~8 Junio · 800 km desde Quebec',b:'Toronto: ciudad muy ciclística. Próximo: VIA Rail "The Canadian" → Winnipeg (2 noches).',cost:'🚆 VIA Canadian TOR→WPG: ~$230–335 USD',p:false,c:'#E05C10'},
-    {lat:49.90,lng:-97.14,t:'Winnipeg, MB',s:'~12 Junio · VIA Rail desde Toronto',b:'Fin de The Canadian primera etapa. Próximos: 400 km en bici por la pradera hasta Melville SK.',cost:'⛺ Camping municipal pradera: $10–15 CAD/noche',p:false,c:'#D4920A'},
-    {lat:52.87,lng:-118.08,t:'Jasper, AB',s:'~20 Junio · Rocallosas',b:'Jasper National Park. Próximo: VIA "The Skeena" → New Hazelton (2 días con escala Prince George).',cost:'🚆 VIA Melville→Jasper: ~$178–260 USD',fauna:'🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio desde aquí',p:false,c:'#D4920A'},
-    {lat:55.25,lng:-127.58,t:'New Hazelton / Kitwanga, BC',s:'~23 Junio · Inicio Cassiar Highway',b:'Fin del VIA Skeena. Inicio de la Cassiar Highway (Hwy 37) en Kitwanga, 14 km al oeste.',cost:'🚆 VIA Skeena + camping PG: ~$310–430 USD',fauna:'⚠️ Inicia zona de máxima densidad de osos',p:false,c:'#E05C10'},
-    {lat:58.43,lng:-130.03,t:'Dease Lake, BC',s:'~29 Junio · Cassiar km 499',b:'Centro de abastecimiento de la Cassiar. Super A Store — comprar para 3 días mínimo. Sin cobertura celular.',cost:'⛺ Crown Land BC: gratis',fauna:'🐻 EXTREMO: Bear scat everywhere (ciclistas 2019–2022) · 🫎 Alce · 🦟 Mosquitos intensos',p:false,c:'#E05C10'},
-    {lat:60.06,lng:-128.70,t:'Watson Lake, YK',s:'~6 Julio · Cassiar/Alaska Hwy junction',b:'Visitar el "Bosque de Señales" (11.000+ señales — foto obligatoria). Inicio Alaska Highway hacia Whitehorse.',cost:'⛺ Campings Gobierno Yukón: $12 CAD/noche',fauna:'🦬 Bisontes km 750–900 · 🐺 Ataque lobo documentado 2013 · ⚠️ Liard Hot Springs km 765: PEOR ataque oso negro NA (1997)',p:false,c:'#E05C10'},
-    {lat:60.72,lng:-135.06,t:'Whitehorse, YK · Capital del Yukón',s:'~14 Julio',b:'Última ciudad grande antes del norte. COMPRAR BEAR SPRAY aquí (~$40 CAD, más barato que Alaska). Cargar 6–7 días comida para la Dalton desde Fairbanks.',cost:'🐻 Bear spray: ~$40 CAD (comprar aquí)',p:false,c:'#E05C10'},
-    {lat:64.84,lng:-147.72,t:'Fairbanks, AK',s:'~27 Julio · Base pre-Dalton',b:'Revisión completa de bicis. Cargar 6–7 días de comida. Bear canister en REI local. Última parada civilizada.',cost:'🛒 Abastecimiento completo: ~$200 USD (2p, 7 días)',fauna:'🫎 ALTO: aumento de ataques de alces 2026 (ADF&G)',p:false,c:'#E05C10'},
-    {lat:67.25,lng:-150.68,t:'Coldfoot Camp, AK',s:'~3 Agosto · km 280 Dalton · ÚLTIMO SERVICIO',b:'ÚLTIMO punto de servicios antes de Deadhorse. Gasolina, comida (+50% precio), ducha ($14). Próximos: 388 km sin nada.',cost:'🏕️ Ducha: $14 USD · 🛒 Comida: +50% markup',fauna:'🐻 Grizzly zona activa · 🦟 Mosquitos en densidad máxima',p:false,c:'#E05C10'},
-    {lat:70.20,lng:-148.46,t:'🏁 PRUDHOE BAY / DEADHORSE',s:'~10 Agosto · META PRINCIPAL',b:'LLEGADA. Punto más norte alcanzable en bici en Norteamérica. Arctic Ocean Shuttle ($89/p) lleva al Océano Ártico — dar número de pasaporte con anticipación para verificación. ¡4ª esquina continental completada!',cost:'🌊 Arctic Ocean Shuttle: $89/p ($178 total) · ⛺ BLM: gratis',fauna:'🐻 Grizzly en tundra · 🦌 Caribúes · 🦟 Mosquitos extremos · 🐻‍❄️ Oso polar posible (raro)',p:true,c:'#E05C10'},
-    {lat:61.22,lng:-149.90,t:'Anchorage, AK',s:'~23 Agosto · Parks Highway',b:'Ciudad más grande de Alaska. Reabastecimiento completo. Próximo: bus Anchorage→Whitehorse (confirmar operador acepta bicis cargadas).',cost:'🚌 Bus a Whitehorse: ~$450–550 USD · ⛺ State parks: $10–20/noche',fauna:'🫎 EXTREMO 2026: aumento de cargas de alces en ciclovías (ADF&G)',p:false,c:'#C43030'},
-    {lat:49.28,lng:-123.12,t:'Vancouver, BC 🇨🇦',s:'~21 Septiembre · Inicio bajada sur',b:'Llegada a Vancouver. Descanso y reabastecimiento. Decisión de ruta: Ruta A (Costa Pacífico + Baja) o Ruta B (Interior + Nogales). Ver pestaña ⬇️ Bajada.',cost:'🚌 ebus PG→VAN: ~$120–185 USD',p:false,c:'#E05C10'},
-    {lat:24.14,lng:-110.31,t:'La Paz, BCS 🇲🇽',s:'~Noviembre (Ruta A) · Ferry a Mazatlán',b:'Fin de la Península de Baja California. Baja Ferries desde Pichilingue. Salida ~6 PM, llegada Mazatlán ~9 AM.',cost:'🚢 Ferry La Paz→Mazatlán: ~$98 USD/p + ~$30 bici',p:false,c:'#1E5F8A'},
-    {lat:23.25,lng:-106.41,t:'🏠 Mazatlán, Sinaloa 🇲🇽',s:'~Diciembre · META FINAL',b:'LLEGADA A MAZATLÁN. Ambas rutas convergen aquí. El viaje completo: Uruguay → 16+ países → Alaska → México.',cost:'Ver costos en pestaña ⬇️ Bajada',p:true,c:'#E05C10'}
+  // ── SEGMENT DEFINITIONS ──────────────────────────────────────────────
+  // Each segment: id, name, type, color, dash, waypoints, km, dates, temps[], cost, fauna, snow
+  const SEG_DEFS = [
+    { id:'s02', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[43.91,-69.97],[44.30,-68.20],[44.52,-67.60],[44.81,-66.95]],
+      km:310, dates:'6–16 Mayo', name:'🚲 Brunswick → West Quoddy Head',
+      temps:[['10–18°C día','mild'],['4–8°C noche','cool']],
+      cost:'⛺ State Parks Maine: $20–25/noche',
+      fauna:'🫎 Alces: amanecer/atardecer · 🐻 Osos negros: colgar comida · 🪲 Black flies PICO: red cabeza + DEET',
+      snow:null },
+    { id:'s03', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[44.81,-66.95],[45.19,-67.28],[45.56,-66.85],[45.87,-65.40],[46.09,-64.78]],
+      km:250, dates:'17–21 Mayo', name:'🚲 Quoddy → Moncton, NB',
+      temps:[['12–20°C día','mild'],['5–10°C noche','cool']],
+      cost:'⛺ Provincial parks NB: $15–22 CAD/noche',
+      fauna:'🫎 NB: 400 colisiones alce/año', snow:null },
+    { id:'s04', type:'train', color:'#D4920A', weight:2.5, dash:'8,5',
+      pts:[[46.09,-64.78],[46.05,-70.00],[45.50,-73.57]],
+      km:650, dates:'~22 Mayo', name:'🚆 Moncton → Montréal · The Ocean',
+      temps:[['Montréal Mayo: 18–24°C','mild']],
+      cost:'🚆 Economy 2p: ~$170–230 USD',
+      fauna:null, snow:null },
+    { id:'s05', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[45.50,-73.57],[46.05,-72.40],[46.81,-71.21]],
+      km:260, dates:'23–26 Mayo', name:'🚲 Montréal → Québec City',
+      temps:[['16–22°C día','mild'],['8–12°C noche','cool']],
+      cost:'⛺ Camping provincial QC: $20–28 CAD/noche',
+      fauna:'🪲 BLACK FLIES PICO mayo-junio. Red para cabeza obligatorio.',
+      snow:'❄️ Mayo: sin riesgo de nieve en este tramo.' },
+    { id:'s06', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[46.81,-71.21],[45.42,-75.70],[43.90,-77.20],[43.65,-79.38]],
+      km:800, dates:'27 Mayo–8 Jun', name:'🚲 Québec City → Ottawa → Toronto',
+      temps:[['Toronto Junio: 22–28°C','warm'],['12–16°C noche','mild']],
+      cost:'⛺ Camping: $12–28 CAD/noche',
+      fauna:null, snow:null },
+    { id:'s07', type:'train', color:'#D4920A', weight:2.5, dash:'8,5',
+      pts:[[43.65,-79.38],[46.50,-84.50],[49.90,-97.14]],
+      km:2200, dates:'~10 Jun', name:'🚆 Toronto → Winnipeg · The Canadian',
+      temps:[['Pradera Junio: 20–26°C','mild']],
+      cost:'🚆 Economy 2p: ~$230–335 USD',
+      fauna:null, snow:null },
+    { id:'s08', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[49.90,-97.14],[50.45,-100.00],[50.93,-102.81]],
+      km:400, dates:'12–18 Jun', name:'🌾 Winnipeg → Melville, SK',
+      temps:[['Pradera Junio: 24–28°C','warm'],['10–14°C noche','mild']],
+      cost:'⛺ Camping municipal: $10–15 CAD/noche',
+      fauna:null, snow:null },
+    { id:'s09', type:'train', color:'#D4920A', weight:2.5, dash:'8,5',
+      pts:[[50.93,-102.81],[52.00,-110.00],[52.87,-118.08]],
+      km:1400, dates:'~19 Jun', name:'🚆 Melville → Jasper · The Canadian',
+      temps:[['Jasper Junio: 16–22°C','mild'],['4–8°C noche montaña','cool']],
+      cost:'🚆 Economy 2p: ~$178–260 USD',
+      fauna:'🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio', snow:null },
+    { id:'s10', type:'train', color:'#D4920A', weight:2.5, dash:'8,5',
+      pts:[[52.87,-118.08],[53.92,-122.75],[55.25,-127.58]],
+      km:1160, dates:'~20–22 Jun', name:'🚆 Jasper → New Hazelton · The Skeena',
+      temps:[['New Hazelton Junio: 16–22°C','mild']],
+      cost:'🚆 Skeena + camping PG: ~$310–430 USD',
+      fauna:null, snow:null },
+    { id:'s11', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[55.25,-127.58],[55.90,-129.10],[57.10,-130.20],[58.43,-130.03],[59.00,-129.80],[60.06,-128.70]],
+      km:725, dates:'24 Jun–6 Jul', name:'🏔️ New Hazelton → Watson Lake · Cassiar Hwy',
+      temps:[['16–22°C día','mild'],['5–10°C noche','cool'],['Lluvia frecuente','cool']],
+      cost:'⛺ Crown Land BC: gratis · Campings BC: $12–22 CAD/noche',
+      fauna:'🐻 EXTREMO: Grizzly+oso negro densos (salmón Jul-Sep) · 🫎 ALTO: alce · 🐺 Lobos activos · 🦟 Mosquitos EXTREMOS',
+      snow:null },
+    { id:'s12', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[60.06,-128.70],[60.20,-130.50],[60.72,-135.06]],
+      km:440, dates:'7–14 Jul', name:'🚲 Watson Lake → Whitehorse',
+      temps:[['Yukón Julio: 18–24°C','warm'],['20+ horas de luz','warm']],
+      cost:'⛺ Campings Yukón: $12 CAD/noche · 🐻 Bear spray: ~$40 CAD',
+      fauna:'🦬 Bisontes km 750–900 · 🐺 Lobo: ataque documentado 2013 · ⚠️ Liard Hot Springs: PEOR ataque oso negro NA',
+      snow:null },
+    { id:'s13', type:'bike', color:'#E05C10', weight:3, dash:'',
+      pts:[[60.72,-135.06],[62.00,-140.00],[63.34,-142.99],[64.84,-147.72]],
+      km:700, dates:'15–27 Jul', name:'🚲 Whitehorse → Fairbanks · Alaska Hwy',
+      temps:[['Fairbanks Julio: 19–23°C','warm'],['22 horas de luz','warm']],
+      cost:'⛺ BLM/State land: gratis · 🛒 Alaska: ~$35/día',
+      fauna:'🐻 Grizzly+oso negro — spray en cuerpo · 🫎 Alces en Fairbanks 2026 (ADF&G)',
+      snow:null },
+    { id:'s14', type:'bike', color:'#E07B39', weight:3.5, dash:'',
+      pts:[[64.84,-147.72],[66.00,-150.00],[67.25,-150.68],[68.15,-149.50],[70.20,-148.46]],
+      km:650, dates:'28 Jul–10 Ago', name:'🏔️ Fairbanks → PRUDHOE BAY · Dalton Hwy',
+      temps:[['Prudhoe Bay Ago: 10–12°C','cool'],['Noche: 4–6°C','frio'],['Atigun Pass: sensación -2°C','frio']],
+      cost:'🌊 Arctic Ocean Shuttle: $178 · 🏕️ Coldfoot shower: $14 · ⛺ BLM: gratis',
+      fauna:'🐻 EXTREMO: Grizzly en tundra (MP 245-414). Bear canister OBLIGATORIO. · 🫎 EXTREMO: 800+ colisiones/año · 🦟 EXTREMO: 17 billones mosquitos/año',
+      snow:'❄️ LÍMITE CRÍTICO: Salir Prudhoe Bay antes 20 Ago. Atigun Pass puede nevar CUALQUIER día. El Niño NO beneficia el North Slope.' },
+    { id:'s15', type:'bike', color:'#C43030', weight:2.5, dash:'4,3',
+      pts:[[70.20,-148.46],[67.25,-150.68],[64.84,-147.72]],
+      km:650, dates:'~10–20 Ago', name:'↩️ Prudhoe Bay → Fairbanks · Regreso',
+      temps:[['Agosto tardío: 8–14°C','cool'],['Noche: 1–5°C','frio']],
+      cost:'⛺ BLM: gratis · 🚌 Alt. Bus Dalton Express: ~$420',
+      fauna:null, snow:null },
+    { id:'s16', type:'bike', color:'#C43030', weight:2.5, dash:'4,3',
+      pts:[[64.84,-147.72],[63.00,-148.50],[61.22,-149.90]],
+      km:580, dates:'~21–30 Ago', name:'🚲 Fairbanks → Anchorage · Parks Hwy',
+      temps:[['Anchorage Agosto: 14–18°C','mild'],['7–10°C noche','cool']],
+      cost:'⛺ State campgrounds: $10–20/noche',
+      fauna:'🫎 ALTO 2026: aumento de ataques de alces en Anchorage (ADF&G)',
+      snow:null },
+    { id:'s17', type:'bus', color:'#5A3A18', weight:2, dash:'5,4',
+      pts:[[61.22,-149.90],[62.00,-143.00],[60.72,-135.06]],
+      km:900, dates:'~31 Ago', name:'🚌 Anchorage → Whitehorse · Bus',
+      temps:[['Whitehorse Sep 1: 12–18°C','mild']],
+      cost:'🚌 Bus Anchorage→Whitehorse: ~$450–550 USD',
+      fauna:null, snow:null },
+    { id:'s18', type:'bike', color:'#C43030', weight:2.5, dash:'4,3',
+      pts:[[60.72,-135.06],[59.00,-129.80],[58.43,-130.03],[57.10,-130.20],[55.25,-127.58],[53.92,-122.75]],
+      km:1165, dates:'1–20 Sep', name:'🚲 Whitehorse → Prince George · Cassiar Sur',
+      temps:[['Cassiar Sep: 8–15°C','cool'],['Madrugada: 0–3°C','frio'],['Nieve posible en pasos','frio']],
+      cost:'⛺ Crown Land: gratis · Campings BC: $12–22 CAD/noche',
+      fauna:'🐻 Grizzly pre-hibernación (hyperphagia) — más agresivos · 🫎 Alce en celo Sep–Oct',
+      snow:'❄️ VENTANA CRÍTICA: Terminar Cassiar antes 20 Sep. El Niño 2026 +5 días vs normal. Dease Lake: nieve promedio desde 23 Sep.' },
+    { id:'s19', type:'bus', color:'#5A3A18', weight:2, dash:'5,4',
+      pts:[[53.92,-122.75],[51.00,-122.60],[49.28,-123.12]],
+      km:780, dates:'~21 Sep', name:'🚌 Prince George → Vancouver · Bus',
+      temps:[['Vancouver Sep: 14–18°C','mild']],
+      cost:'🚌 ebus 2p: ~$120–185 USD',
+      fauna:null, snow:null },
   ];
 
-  const style=document.createElement('style');
-  style.textContent='@keyframes wpulse{0%,100%{box-shadow:0 0 0 0 rgba(224,92,16,.6)}50%{box-shadow:0 0 0 8px rgba(224,92,16,0)}}';
-  document.head.appendChild(style);
+  // ── SOUTHBOUND ROUTES ────────────────────────────────────────────────
+  const rutaA = [[49.28,-123.12],[47.61,-122.33],[45.51,-122.68],[44.05,-123.09],
+    [41.76,-124.20],[37.77,-122.42],[34.05,-118.24],[32.72,-117.16],
+    [32.51,-117.04],[31.87,-116.60],[27.97,-114.02],[24.14,-110.31],[23.25,-106.41]];
+  const rutaB = [[49.28,-123.12],[47.61,-122.33],[45.51,-122.68],
+    [43.62,-116.20],[40.76,-111.89],[38.57,-109.55],
+    [35.20,-111.65],[33.45,-112.07],[32.22,-110.97],[31.34,-110.93],[29.07,-110.96],[23.25,-106.41]];
 
-  WP.forEach(w=>{
-    const s=w.p?16:11;
-    const icon=L.divIcon({className:'',html:`<div style="width:${s}px;height:${s}px;border-radius:50%;background:${w.c};border:2.5px solid white;box-shadow:0 2px 6px rgba(0,0,0,.4);${w.p?'animation:wpulse 2s infinite':''}"></div>`,iconSize:[s,s],iconAnchor:[s/2,s/2]});
-    let pop=`<div class="pt">${w.t}</div><div class="psu">${w.s}</div><div class="pb2">${w.b}</div>`;
-    if(w.cost) pop+=`<div class="pc2">${w.cost.replace(/\n/g,'<br>')}</div>`;
-    if(w.fauna) pop+=`<div class="pf">${w.fauna}</div>`;
+  // ── OSRM ROUTING ────────────────────────────────────────────────────
+  const segLayers = {};
+  window.segLayers = segLayers;
+
+  async function fetchOSRM(pts) {
+    try {
+      const coords = pts.map(([lat,lng]) => `${lng},${lat}`).join(';');
+      const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=false`;
+      const r = await fetch(url);
+      const d = await r.json();
+      if (d.code === 'Ok' && d.routes && d.routes[0]) {
+        return d.routes[0].geometry.coordinates.map(([lng,lat]) => [lat,lng]);
+      }
+    } catch(e) { console.warn('OSRM fail for segment, using waypoints:', e.message); }
+    return pts; // fallback to straight lines
+  }
+
+  async function drawSeg(seg) {
+    let pts;
+    if (seg.type === 'bike') {
+      pts = await fetchOSRM(seg.pts);
+    } else {
+      pts = seg.pts;
+    }
+
+    const style = { color: seg.color, weight: seg.weight, opacity: 0.9 };
+    if (seg.dash) style.dashArray = seg.dash;
+    const layer = L.polyline(pts, style).addTo(map);
+
+    // Click on route → show segment info
+    layer.on('click', () => showSegOnMap(seg));
+    layer.on('mouseover', () => layer.setStyle({weight: seg.weight + 2, opacity: 1}));
+    layer.on('mouseout', () => layer.setStyle({weight: seg.weight, opacity: 0.9}));
+
+    segLayers[seg.id] = { layer, seg, pts };
+    return layer;
+  }
+
+  // Draw all segments (async, progressive)
+  SEG_DEFS.forEach(seg => drawSeg(seg));
+
+  // Southbound routes
+  L.polyline(rutaA, {color:'#1E5F8A', weight:2, dashArray:'6,4', opacity:0.8}).addTo(map);
+  L.polyline(rutaB, {color:'#4A7530', weight:2, dashArray:'4,4', opacity:0.8}).addTo(map);
+
+  // ── SEGMENT INFO PANEL ON MAP ────────────────────────────────────────
+  function tempChip(t, type) {
+    const bg = {frio:'#3A0A0A',cool:'#3A2000',mild:'#1A3A00',warm:'#00281A'};
+    const fg = {frio:'#FCA5A5',cool:'#FDE68A',mild:'#A7F3D0',warm:'#6EE7B7'};
+    return `<span style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:2px 7px;border-radius:4px;background:${bg[type]||'#3A2000'};color:${fg[type]||'#FDE68A'}">${t}</span>`;
+  }
+
+  function showSegOnMap(seg) {
+    const el = document.getElementById('seg-info-panel');
+    if (!el) return;
+    let html = `<div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#1C1206;margin-bottom:4px">${seg.name}</div>`;
+    html += `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A6830;margin-bottom:8px">${seg.dates} · ${seg.km} km</div>`;
+    if (seg.temps && seg.temps.length) {
+      html += `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px">${seg.temps.map(([t,type])=>tempChip(t,type)).join('')}</div>`;
+    }
+    if (seg.cost) html += `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:6px 8px;background:#E3D5B0;border-radius:4px;border-left:2px solid #D4920A;color:#1C1206;line-height:1.6;margin-bottom:6px">${seg.cost.replace(/\n/g,'<br>')}</div>`;
+    if (seg.fauna) html += `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:6px 8px;background:#1A0A00;border-radius:4px;border-left:2px solid #EA580C;color:#FEE2A0;line-height:1.6;margin-bottom:6px">${seg.fauna}</div>`;
+    if (seg.snow) html += `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:6px 8px;background:#000A1A;border-radius:4px;border-left:2px solid #60A5FA;color:#BAE6FD;line-height:1.6">${seg.snow}</div>`;
+    el.innerHTML = html + `<button onclick="document.getElementById('seg-info-panel').style.display='none'" style="position:absolute;top:8px;right:8px;background:none;border:none;cursor:pointer;font-size:16px;color:#8A6830">✕</button>`;
+    el.style.display = 'block';
+  }
+
+  // Function called from TRAMOS tab
+  window.focusSeg = function(segId) {
+    sT('map');
+    setTimeout(() => {
+      const entry = segLayers[segId];
+      if (entry) {
+        map.fitBounds(entry.layer.getBounds(), {padding:[30,30]});
+        // Flash highlight
+        const orig = {color: entry.seg.color, weight: entry.seg.weight};
+        entry.layer.setStyle({color:'#FBBF24', weight: orig.weight + 3});
+        setTimeout(() => entry.layer.setStyle(orig), 1500);
+        showSegOnMap(entry.seg);
+      }
+    }, 200);
+  };
+
+  // ── WAYPOINTS ────────────────────────────────────────────────────────
+  const WP=[
+    {lat:38.95,lng:-76.87,t:'🔧 New Carrollton, MD',s:'SALIDA · 5 Mayo 2026',b:'Bicis en storage cercano. Camping + Walmart para preparación. ⚠️ eTA Canada tramitar online ($7 CAD).',cost:'Prep: 4–5 días',p:false,c:'#E05C10'},
+    {lat:44.81,lng:-66.95,t:'✅ West Quoddy Head, ME',s:'~17 Mayo · 4ª ESQUINA DEL CONTINENTE',b:'West Quoddy Head Lighthouse, Lubec ME — punto más noreste del continente. ¡4ª y última esquina! (Key West ✅ San Diego ✅ Quoddy ✅)',cost:'⛺ Cobscook Bay SP: $20–25/noche',temps:[['10–18°C','cool'],['4–8°C noche','frio']],p:true,c:'#E05C10'},
+    {lat:46.09,lng:-64.78,t:'Moncton, NB 🇨🇦',s:'~21 Mayo · Cruce Calais→St. Stephen',b:'Primera entrada a Canadá. Presentar pasaportes con visa estampada.',cost:'⛺ Provincial parks NB: $15–22 CAD/noche',temps:[['12–20°C','mild']],p:false,c:'#E05C10'},
+    {lat:45.50,lng:-73.57,t:'Montréal',s:'~23 Mayo · VIA Rail "The Ocean"',b:'Llega The Ocean en Gare Centrale. La Route Verte inicia aquí.',cost:'🚆 VIA Ocean: ~$170–230 USD',temps:[['18–24°C','mild'],['8–13°C noche','cool']],p:false,c:'#D4920A'},
+    {lat:46.81,lng:-71.21,t:'Québec City',s:'~27 Mayo · Route Verte',b:'Route Verte / Chemin du Roy → plana, señalizada, junto al St. Lawrence.',cost:'⛺ Camping QC: $20–28 CAD/noche',temps:[['16–22°C','mild']],p:false,c:'#E05C10'},
+    {lat:45.42,lng:-75.70,t:'Ottawa, ON',s:'~2 Junio',b:'Capital de Canadá. La Route Verte conecta Montreal→Ottawa→Kingston.',cost:'⛺ Camping: $15–25 CAD/noche',temps:[['20–26°C','warm']],p:false,c:'#E05C10'},
+    {lat:43.65,lng:-79.38,t:'Toronto, ON',s:'~8 Junio',b:'Ciudad muy ciclística. Próximo: VIA Rail "The Canadian" → Winnipeg.',cost:'🚆 VIA Canadian TOR→WPG: ~$230–335 USD',temps:[['22–28°C','warm'],['12–16°C noche','mild']],p:false,c:'#E05C10'},
+    {lat:49.90,lng:-97.14,t:'Winnipeg, MB',s:'~12 Junio',b:'Fin de The Canadian. Próximos: 400 km en bici por la pradera.',cost:'⛺ Camping municipal: $10–15 CAD/noche',temps:[['24–28°C','warm']],p:false,c:'#D4920A'},
+    {lat:50.93,lng:-102.81,t:'Melville, SK',s:'~18 Junio · Pradera',b:'Fin del tramo de pradera. Próximo: VIA Canadian → Jasper.',cost:'⛺ Camping municipal: $10 CAD/noche',temps:[['24–28°C','warm']],p:false,c:'#E05C10'},
+    {lat:52.87,lng:-118.08,t:'Jasper, AB',s:'~20 Junio · Rocallosas',b:'Jasper National Park. Próximo: VIA "The Skeena" → New Hazelton.',cost:'🚆 VIA Melville→Jasper: ~$178–260 USD',temps:[['16–22°C','mild'],['4–8°C noche','cool']],fauna:'🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio',p:false,c:'#D4920A'},
+    {lat:55.25,lng:-127.58,t:'New Hazelton / Kitwanga, BC',s:'~23 Junio · Inicio Cassiar Highway',b:'Fin del VIA Skeena. Inicio Cassiar Highway (Hwy 37) en Kitwanga, 14 km al oeste.',cost:'🚆 VIA Skeena + camping PG: ~$310–430 USD',temps:[['16–22°C','mild']],fauna:'⚠️ INICIO zona máxima densidad osos',p:false,c:'#E05C10'},
+    {lat:58.43,lng:-130.03,t:'Dease Lake, BC',s:'~29 Junio · Cassiar km 499',b:'Centro de abastecimiento. Super A Store — comprar para 3 días mínimo. Sin cobertura celular.',cost:'⛺ Crown Land BC: gratis',temps:[['18–22°C','mild']],fauna:'🐻 EXTREMO: Bear scat everywhere · 🫎 Alce · 🦟 Mosquitos intensos',p:false,c:'#E05C10'},
+    {lat:60.06,lng:-128.70,t:'Watson Lake, YK',s:'~6 Julio · Bosque de Señales',b:'Visitar el "Bosque de Señales" (11.000+ señales del mundo). Inicio Alaska Highway.',cost:'⛺ Campings Yukón: $12 CAD/noche',temps:[['18–24°C','warm']],fauna:'🦬 Bisontes · 🐺 Ataque lobo 2013 · ⚠️ Liard Hot Springs: PEOR ataque oso negro NA (1997)',p:false,c:'#E05C10'},
+    {lat:60.72,lng:-135.06,t:'Whitehorse, YK · Capital del Yukón',s:'~14 Julio',b:'Reabastecimiento completo. COMPRAR BEAR SPRAY aquí (~$40 CAD). Cargar 6–7 días comida.',cost:'🐻 Bear spray Whitehorse: ~$40 CAD',temps:[['18–24°C','warm'],['20+ horas de luz','warm']],p:false,c:'#E05C10'},
+    {lat:64.84,lng:-147.72,t:'Fairbanks, AK',s:'~27 Julio · Base pre-Dalton',b:'Revisión completa de bicis. 6–7 días de comida. Bear canister en REI local.',cost:'🛒 Abastecimiento: ~$200 USD (2p, 7 días)',temps:[['19–23°C','warm'],['22 horas de luz','warm']],fauna:'🫎 ALTO: aumento de ataques de alces 2026 (ADF&G)',p:false,c:'#E05C10'},
+    {lat:67.25,lng:-150.68,t:'Coldfoot Camp, AK · ÚLTIMO SERVICIO',s:'~3 Agosto · km 280 Dalton',b:'ÚLTIMO punto de servicios antes de Deadhorse. Gasolina, comida (+50%), ducha ($14). Próximos: 388 km sin nada.',cost:'🏕️ Ducha: $14 · 🛒 Comida: +50% markup',temps:[['12–16°C','cool']],fauna:'🐻 Grizzly zona activa · 🦟 Mosquitos en máxima densidad',p:false,c:'#E05C10'},
+    {lat:70.20,lng:-148.46,t:'🏁 PRUDHOE BAY / DEADHORSE',s:'~10 Agosto · META PRINCIPAL · 4ª ESQUINA',b:'LLEGADA. Arctic Ocean Shuttle ($89/p) para tocar el Océano Ártico. Dar pasaporte con anticipación. ¡Expedición completada!',cost:'🌊 Arctic Ocean Shuttle: $178 total · ⛺ BLM: gratis',temps:[['10–12°C','cool'],['4–6°C noche','frio'],['Atigun Pass: sensación -2°C','frio']],fauna:'🐻 Grizzly en tundra · 🦌 Caribúes · 🦟 Mosquitos extremos',p:true,c:'#E05C10'},
+    {lat:61.22,lng:-149.90,t:'Anchorage, AK',s:'~23 Agosto · Parks Highway',b:'Reabastecimiento completo. Bus Anchorage→Whitehorse (confirmar operador).',cost:'🚌 Bus Whitehorse: ~$450–550 USD',temps:[['14–18°C','mild']],fauna:'🫎 EXTREMO 2026: aumento ataques alces en ciclovías',p:false,c:'#C43030'},
+    {lat:49.28,lng:-123.12,t:'Vancouver, BC 🇨🇦',s:'~21 Septiembre · Inicio bajada sur',b:'Llegada Vancouver. Descanso y reabastecimiento. Decisión de ruta: Costa Pacífico o Interior USA.',cost:'🚌 ebus PG→VAN: ~$120–185 USD',temps:[['14–18°C','mild']],p:false,c:'#E05C10'},
+    {lat:24.14,lng:-110.31,t:'La Paz, BCS 🇲🇽',s:'~Noviembre (Ruta A) · Ferry Mazatlán',b:'Fin Baja California. Baja Ferries desde Pichilingue. Salida ~6 PM, llegada Mazatlán ~9 AM.',cost:'🚢 Ferry La Paz→Mazatlán: ~$98 USD/p + ~$30 bici',temps:[['28°C / 15°C','warm']],p:false,c:'#1E5F8A'},
+    {lat:23.25,lng:-106.41,t:'🏠 Mazatlán, Sinaloa 🇲🇽',s:'~Diciembre · META FINAL',b:'LLEGADA A MAZATLÁN. Ambas rutas convergen aquí. Uruguay → 16+ países → Alaska → México.',cost:'Ver pestaña ⬇️ Bajada',temps:[['26°C / 18°C','warm']],p:true,c:'#E05C10'}
+  ];
+
+  const styleEl = document.createElement('style');
+  styleEl.textContent = '@keyframes wpulse{0%,100%{box-shadow:0 0 0 0 rgba(224,92,16,.6)}50%{box-shadow:0 0 0 8px rgba(224,92,16,0)}}';
+  document.head.appendChild(styleEl);
+
+  WP.forEach(w => {
+    const s = w.p ? 16 : 11;
+    const icon = L.divIcon({
+      className:'',
+      html:`<div style="width:${s}px;height:${s}px;border-radius:50%;background:${w.c};border:2.5px solid white;box-shadow:0 2px 6px rgba(0,0,0,.4);${w.p?'animation:wpulse 2s infinite':''}"></div>`,
+      iconSize:[s,s], iconAnchor:[s/2,s/2]
+    });
+    let pop = `<div class="pt">${w.t}</div><div class="psu">${w.s}</div><div class="pb2">${w.b}</div>`;
+    if (w.temps) pop += `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:6px">${w.temps.map(([t,type])=>tempChip(t,type)).join('')}</div>`;
+    if (w.cost) pop += `<div class="pc2" style="margin-top:6px">${w.cost}</div>`;
+    if (w.fauna) pop += `<div class="pf" style="margin-top:5px">${w.fauna}</div>`;
     L.marker([w.lat,w.lng],{icon}).addTo(map).bindPopup(pop,{maxWidth:280});
   });
 
-  // WILDLIFE MARKERS
+  // ── WILDLIFE MARKERS (emoji circles) ─────────────────────────────────
   const FW=[
-    {lat:44.5,lng:-68.5,lv:'m',n:'Maine/NB: Alces + Black flies',d:'Alces activos al amanecer/atardecer. 400 colisiones/año NB. Black flies PICO mayo–junio.'},
-    {lat:52.9,lng:-117.9,lv:'h',n:'Jasper/Banff: Elk en celo + Grizzly',d:'Elk celo: finales Ago–Oct. Parks Canada: "extremadamente agresivos." Grizzly presentes año redondo.'},
-    {lat:56.0,lng:-129.5,lv:'x',n:'Meziadin/Cassiar: GRIZZLY DENSO',d:'Temporada salmón Jul–Sep. Densidad máxima de grizzlies en toda la ruta. "Más osos que personas."'},
-    {lat:57.1,lng:-130.1,lv:'x',n:'Bell-Irving Valley: GRIZZLY + Mosquitos',d:'5 osos negros en un día documentado. "Never seen mosquitoes so bad."'},
-    {lat:59.4,lng:-126.1,lv:'x',n:'⚠️ Liard Hot Springs km 765',d:'Agosto 1997: PEOR ataque oso negro de Norteamérica. 2 muertos, 2 heridos. Cerco eléctrico instalado.'},
-    {lat:60.0,lng:-128.7,lv:'h',n:'Watson Lake: Bisontes + Lobo',d:'~1.000 bisontes protegidos. Ataque lobo a ciclista documentado (Mac Hollan, 2013, CBC).'},
-    {lat:64.8,lng:-147.7,lv:'h',n:'Fairbanks/Interior Alaska: Alces 2026',d:'ADF&G reporta 2026: aumento de cargas de alces. 800+ colisiones alce/año en Alaska.'},
-    {lat:68.0,lng:-149.7,lv:'x',n:'🔴 Dalton MP 245–414: GRIZZLY TUNDRA',d:'BLM identifica Slope Mountain MP 300 como zona de grizzlies en tundra. Sin árboles: bear canister obligatorio. 17 billones de mosquitos nacen/año.'},
-    {lat:70.2,lng:-148.4,lv:'x',n:'Prudhoe Bay: Grizzly + Mosquitos',d:'Grizzly en tundra. Mosquitos extremos. Caribúes en migración. Oso polar posible (raro).'},
-    {lat:47.5,lng:-121.8,lv:'h',n:'North Bend/WA: PUMAS',d:'Ataque fatal a ciclista 2018. Ataque grupal a 5 ciclistas 2024 (45 min de lucha). El movimiento rápido activa instinto depredador.'},
-    {lat:32.5,lng:-111.0,lv:'h',n:'Arizona: Cascabeles + Escorpiones',d:'13–14 especies de cascabel. Bark Scorpion: más venenoso de NA, TREPA, entra en tiendas/calzado. Linterna UV esencial.'},
-    {lat:28.0,lng:-113.5,lv:'m',n:'Baja California: Perros + Escorpiones',d:'Perros ferales: amenaza más frecuente para ciclistas en México. Escorpiones Baja bark present.'},
-    {lat:24.5,lng:-107.0,lv:'h',n:'Sinaloa: C. basiliscus + DENGUE',d:'Crotalus basiliscus: hasta 2m, veneno hemotóxico+neurotóxico, 297mg (muy alto). Dengue: Sinaloa fue uno de los peores focos 2024.'}
+    {lat:44.5,lng:-68.5,lv:'m',e:'🫎',n:'Maine/NB: Alces + Black flies',d:'Alces activos al amanecer/atardecer. 400 colisiones/año NB. Black flies PICO mayo–junio.'},
+    {lat:52.9,lng:-117.9,lv:'h',e:'🦌',n:'Jasper/Banff: Elk en celo + Grizzly',d:'Elk celo: finales Ago–Oct. Parks Canada: "extremadamente agresivos." Grizzly presentes año redondo.'},
+    {lat:56.0,lng:-129.5,lv:'x',e:'🐻',n:'Meziadin/Cassiar: GRIZZLY DENSO',d:'Temporada salmón Jul–Sep. Densidad máxima de grizzlies. "Más osos que personas" (ciclistas documentados).'},
+    {lat:57.1,lng:-130.1,lv:'x',e:'🐻',n:'Bell-Irving Valley: GRIZZLY + Mosquitos',d:'5 osos negros en un día documentado. "Never seen mosquitoes so bad."'},
+    {lat:59.4,lng:-126.1,lv:'x',e:'⚠️',n:'Liard Hot Springs km 765',d:'1997: PEOR ataque oso negro de NA. 2 muertos, 2 heridos graves. Cerco eléctrico instalado.'},
+    {lat:60.0,lng:-128.7,lv:'h',e:'🦬',n:'Watson Lake: Bisontes + Lobo',d:'~1.000 bisontes protegidos. Ataque lobo a ciclista documentado (Mac Hollan, 2013, CBC).'},
+    {lat:64.8,lng:-147.7,lv:'h',e:'🫎',n:'Fairbanks/Alaska: Alces 2026',d:'ADF&G reporta 2026: aumento de cargas de alces. 800+ colisiones alce/año en Alaska.'},
+    {lat:68.0,lng:-149.7,lv:'x',e:'🐻',n:'Dalton MP 245–414: GRIZZLY TUNDRA',d:'Slope Mountain MP 300: grizzlies en tundra abierta. Sin árboles = bear canister obligatorio. 17 billones mosquitos/año.'},
+    {lat:70.2,lng:-148.4,lv:'x',e:'🐻',n:'Prudhoe Bay: EXTREMO',d:'Grizzly en tundra. Mosquitos extremos. Caribúes en migración. Oso polar posible (raro).'},
+    {lat:47.5,lng:-121.8,lv:'h',e:'🦁',n:'North Bend/WA: PUMAS',d:'Ataque fatal 2018. Ataque grupal 5 ciclistas 2024. El movimiento del ciclismo activa instinto depredador.'},
+    {lat:32.5,lng:-111.0,lv:'h',e:'🐍',n:'Arizona: Cascabeles + Escorpiones',d:'13–14 especies de cascabel. Bark Scorpion: más venenoso de NA, TREPA, entra en tiendas. Linterna UV esencial.'},
+    {lat:28.0,lng:-113.5,lv:'m',e:'🐕',n:'Baja California: Perros + Escorpiones',d:'Perros ferales: amenaza más frecuente para ciclistas en México. Escorpiones Baja bark present.'},
+    {lat:24.5,lng:-107.0,lv:'h',e:'🐍',n:'Sinaloa: C. basiliscus + DENGUE',d:'Crotalus basiliscus: hasta 2m, veneno extremo (297mg). OMS: "medically important." Dengue: Sinaloa fue peor foco 2024.'}
   ];
-  const DC={x:'#DC2626',h:'#EA580C',m:'#CA8A04'};
-  const DS={x:16,h:13,m:11};
-  FW.forEach(f=>{
-    const c=DC[f.lv];const s=DS[f.lv];
-    const icon=L.divIcon({className:'',html:`<div style="width:${s}px;height:${s}px;border-radius:50%;background:${c};border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.5)"></div>`,iconSize:[s,s],iconAnchor:[s/2,s/2]});
-    L.marker([f.lat,f.lng],{icon}).addTo(map).bindPopup(`<div class="pt">${f.n}</div><div class="pf" style="margin-top:6px">${f.d}</div>`,{maxWidth:260});
+
+  const DC = {x:'#DC2626', h:'#EA580C', m:'#CA8A04'};
+  FW.forEach(f => {
+    const c = DC[f.lv];
+    const icon = L.divIcon({
+      className:'',
+      html:`<div style="width:26px;height:26px;border-radius:50%;background:${c};border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:13px">${f.e}</div>`,
+      iconSize:[26,26], iconAnchor:[13,13]
+    });
+    L.marker([f.lat,f.lng],{icon}).addTo(map)
+      .bindPopup(`<div class="pt">${f.n}</div><div class="pf" style="margin-top:6px">${f.d}</div>`,{maxWidth:260});
   });
 
-  // Force multiple resize attempts for iframe/proxy contexts
+  // Force resize
   map.invalidateSize();
-  setTimeout(()=>map.invalidateSize(), 100);
   setTimeout(()=>map.invalidateSize(), 500);
-  setTimeout(()=>map.invalidateSize(), 1000);
-  setTimeout(()=>map.invalidateSize(), 2000);
+  setTimeout(()=>map.invalidateSize(), 1500);
   window.addEventListener('resize', ()=>map.invalidateSize());
 }
+
 </script>
 
 <script>
