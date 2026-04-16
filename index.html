@@ -550,6 +550,91 @@ function iM(){
 
 
 
+  // ─── DANGER ZONES ────────────────────────────────────────────────
+  // Each zone: colored polyline overlay + entry/exit markers
+
+  // Helper: create a danger zone marker (entry or exit)
+  function dzMarker(lat, lng, type, label, detail) {
+    const isEntry = type === 'entry';
+    const color = '#DC2626';
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="
+        background:${color};
+        color:white;
+        border:2.5px solid white;
+        border-radius:6px;
+        padding:3px 6px;
+        font-family:monospace;
+        font-size:10px;
+        font-weight:700;
+        white-space:nowrap;
+        box-shadow:0 2px 8px rgba(0,0,0,.5);
+        line-height:1.3;
+      ">${isEntry ? '⚠️ ENTRADA' : '✅ SALIDA'}<br>${label}</div>`,
+      iconAnchor: [40, 12]
+    });
+    L.marker([lat, lng], {icon}).addTo(MAP)
+      .bindPopup(`<div class="pt" style="color:#DC2626">${isEntry ? '⚠️ ZONA EXTREMA — ENTRADA' : '✅ FIN ZONA EXTREMA'}</div><div class="pb2">${detail}</div>`, {maxWidth:260});
+  }
+
+  // Helper: overlay a red danger segment on the map
+  function dzOverlay(coords) {
+    L.polyline(coords, {
+      color: '#DC2626',
+      weight: 6,
+      opacity: 0.35,
+      lineCap: 'round'
+    }).addTo(MAP);
+  }
+
+  // ── DALTON: MP 245 → MP 414 (272 km, ~4-5 días) ──────────────────
+  dzOverlay([
+    [66.55, -150.10],
+    [67.25, -150.68],  // Coldfoot (existing waypoint)
+    [68.80, -148.80],
+  ]);
+  dzMarker(66.55, -150.10, 'entry', 'Dalton MP 245', 
+    'Inicio zona grizzly tundra abierta. Sin árboles → bear canister OBLIGATORIO. ~272 km de exposición máxima. A 60 km/día: ~4–5 días.');
+  dzMarker(68.80, -148.80, 'exit', 'Dalton MP 414',
+    'Fin zona más crítica de grizzly. Continúan hasta Prudhoe Bay pero con menor densidad. Faltan ~50 km hasta la meta.');
+
+  // ── CASSIAR: Bell-Irving km 150 → Dease Lake km 450 ──────────────
+  dzOverlay([
+    [56.90, -129.30],
+    [57.10, -130.20],
+    [58.00, -129.90],
+    [58.85, -129.80],
+  ]);
+  dzMarker(56.90, -129.30, 'entry', 'Cassiar km 150 — Bell 2 Lodge',
+    'Inicio zona de máxima densidad de osos (salmón Jul–Sep). Bell 2 Lodge: último punto de servicio por 157 km. "5 osos negros en un día" (ciclista 2019). ~300 km de zona extrema.');
+  dzMarker(58.85, -129.80, 'exit', 'Cassiar km 450 — sur de Dease Lake',
+    'La densidad de osos disminuye. Dease Lake a ~50 km al norte: primer servicio completo desde Bell 2. Sin embargo: osos siguen presentes en toda la Cassiar.');
+
+  // ── LIARD HOT SPRINGS: punto histórico ───────────────────────────
+  {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="
+        background:#7C0000;
+        color:white;
+        border:2.5px solid #FF6B6B;
+        border-radius:6px;
+        padding:3px 6px;
+        font-family:monospace;
+        font-size:10px;
+        font-weight:700;
+        white-space:nowrap;
+        box-shadow:0 2px 8px rgba(0,0,0,.6);
+        line-height:1.3;
+        animation:wpl 2s infinite;
+      ">💀 LIARD<br>km 765</div>`,
+      iconAnchor: [35, 12]
+    });
+    L.marker([59.42, -126.10], {icon}).addTo(MAP)
+      .bindPopup(`<div class="pt" style="color:#DC2626">💀 Liard Hot Springs — Punto HISTÓRICO</div><div class="pf" style="margin-top:6px">Agosto 1997: PEOR ataque de oso negro de Norteamérica. 2 muertos, 2 heridos graves. El oso negro emboscó a turistas en el sendero del hot spring.<br><br>Hoy: cerco eléctrico instalado. Bears y bisontes siguen siendo presencia regular. Zona de mayor historial de incidentes de toda la Alaska Hwy.</div>`, {maxWidth:280});
+  }
+
   MAP.invalidateSize();
   setTimeout(()=>MAP.invalidateSize(),500);
   setTimeout(()=>MAP.invalidateSize(),1500);
