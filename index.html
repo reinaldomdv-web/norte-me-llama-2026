@@ -163,189 +163,366 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   </div>
   <!-- TRAMOS -->
   <div id="pane-tr" class="pane">
+
+    <!-- CSS additions for transport comparison -->
+    <style>
+    .tc{background:var(--bg2);border-radius:6px;padding:8px 10px;margin-top:6px}
+    .tc-title{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;color:var(--ink3)}
+    .tc-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--bg3);font-size:10px}
+    .tc-row:last-child{border-bottom:none}
+    .tc-mode{font-family:'Source Serif 4',serif;font-weight:600;color:var(--ink);flex:1}
+    .tc-price{font-family:'JetBrains Mono',monospace;font-size:10px;text-align:right;white-space:nowrap}
+    .tc-best{background:#001A00;border-radius:4px;padding:2px 6px;color:#86EFAC;font-size:9px;margin-left:4px}
+    .tc-warn{background:#2A0000;border-radius:4px;padding:2px 6px;color:#FCA5A5;font-size:9px;margin-left:4px}
+    .aven{background:#001500;border-radius:5px;padding:7px 10px;border-left:3px solid #4A7530;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#A7F3D0;line-height:1.65}
+    .aven-title{color:#86EFAC;font-weight:700;margin-bottom:3px}
+    </style>
+
     <div class="ph n">▲ IDA NORTE — 5 Mayo → ~10 Agosto</div>
 
-    <div class="sr" onclick="tS(this,'corridor',[38.95,-76.87])">
-      <div class="srt"><div><span class="sn">#00-01</span><span class="sm">New Carrollton → Baltimore → Philadelphia → NYC → Boston → Brunswick ME</span><div class="sd2">5 Mayo · 916 km · Tren/Bici a definir</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆/🚲</span></div>
+    <!-- #00 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#00</span><span class="sm">🔧 Preparación — New Carrollton, MD</span><div class="sd2">1–5 Mayo · 4 días</div></div><span class="sb" style="background:var(--bg3);color:var(--ink2)">PREP</span></div>
       <div class="sdet">
-        <div class="sg">
-          <div><div class="sl">Distancia real</div><div class="sv">916 km</div></div>
-          <div><div class="sl">Paradas</div><div class="sv">Baltimore · Philadelphia · NYC · Boston</div></div>
+        <div class="sno">Revisión bicis, Starlink Mini, power bank. eTA Canada en canada.ca ($7 CAD). Compras Walmart.</div>
+        <div class="sts"><span class="tp m">MD Mayo: 16–23°C</span><span class="tp c">Noche: 8–12°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Costos</div>
+          <div class="tc-row"><div class="tc-mode">eTA Canada (Tabaré)</div><div class="tc-price">$7 CAD</div></div>
+          <div class="tc-row"><div class="tc-mode">Camping/storage</div><div class="tc-price">$20–40 USD</div></div>
         </div>
-        <div class="sno">Corredor del noreste. Las paradas sirven para saber dónde tomar o bajar del tren, o dónde cambiar a bici. Modo de transporte entre cada ciudad aún a definir. El tramo clave es la conexión Boston North Station → Brunswick ME en Amtrak Downeaster.</div>
-        <div class="sts"><span class="tp m">Maryland/NYC Mayo: 18–24°C</span><span class="tp c">Brunswick: 8–15°C</span></div>
-        <div class="sc">🚆 Amtrak NE Regional: New Carrollton→Boston ~$95–130 USD (2p)<br>🚆 Amtrak Downeaster: Boston→Brunswick ~$55–70 (2p) + $16 bicis<br>⚠️ Downeaster: solo 3 espacios de bici — reservar anticipado</div>
         <button class="sgoto" onclick="goMap('corridor',[38.95,-76.87]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'quoddy',[44.81,-66.95])">
+    <!-- #01 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#01</span><span class="sm">New Carrollton → Brunswick, ME</span><div class="sd2">5 Mayo · 1 día · 916 km reales</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 TREN</span></div>
+      <div class="sdet">
+        <div class="sno">MARC Train NC→Baltimore + Amtrak NE Regional Baltimore→Boston + traslado South→North Stn + Amtrak Downeaster Boston→Brunswick. ⚠️ Solo 3 espacios de bici en Downeaster — reservar anticipado.</div>
+        <div class="sts"><span class="tp m">Maryland: 18–24°C</span><span class="tp c">Brunswick: 8–15°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚆 MARC NC→Baltimore</div><div class="tc-price">$16 USD <span class="tc-best">MEJOR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚆 NE Regional + Downeaster</div><div class="tc-price">$180–220 USD</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Peter Pan (NYC→Boston)</div><div class="tc-price">$50–90 USD (sin bici garantía)</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total estimado 2p+bicis</div><div class="tc-price" style="color:var(--fire);font-weight:700">$220–270 USD</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón Baltimore→NYC o NYC→Boston</div>Viable en I-95 truck stops. Necesitan pickup/van para 2 bicis cargadas. Ahorra $60–120 USD pero impredecible en tiempo.</div>
+        <button class="sgoto" onclick="goMap('corridor',[38.95,-76.87]);event.stopPropagation()">🗺 Ver en mapa →</button>
+      </div>
+    </div>
+
+    <!-- #02 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#02</span><span class="sm">🚲 Brunswick ME → West Quoddy Head ✅ 4ª ESQUINA</span><div class="sd2">6–16 Mayo · 10 días · 335 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">335 km</div></div><div><div class="sl">Días</div><div class="sv">~10 días</div></div></div>
-        <div class="sno">Ruta costera US-1 / Bold Coast. Destino: West Quoddy Head Lighthouse, Lubec ME — ¡4ª esquina del continente!</div>
+        <div class="sno">Ruta US-1 / Bold Coast. West Quoddy Head Lighthouse — ¡4ª esquina del continente! Zona remota desde Ellsworth — cargar provisiones 2 días.</div>
         <div class="sts"><span class="tp c">Maine Mayo: 10–18°C</span><span class="tp c">Noche: 4–8°C</span></div>
-        <div class="sc">⛺ State Parks Maine: $20–25/noche</div>
-        <div class="sf">🫎 Alces al amanecer/atardecer · 🐻 Osos negros · 🪲 Black flies PICO mayo</div>
+        <div class="tc"><div class="tc-title">💰 Costos 10 días</div>
+          <div class="tc-row"><div class="tc-mode">⛺ State Parks Maine</div><div class="tc-price">$20–25/noche</div></div>
+          <div class="tc-row"><div class="tc-mode">🛒 Comida autococinada</div><div class="tc-price">~$25/día (2p)</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 10 días</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$450 USD</div></div>
+        </div>
+        <div class="sf">🫎 Alces amanecer/atardecer · 🐻 Osos negros · 🪲 Black flies PICO mayo</div>
         <button class="sgoto" onclick="goMap('quoddy',[44.81,-66.95]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'moncton',[46.09,-64.78])">
+    <!-- #03 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#03</span><span class="sm">🚲 West Quoddy Head → Moncton, NB 🇨🇦</span><div class="sd2">17–21 Mayo · 4 días · 347 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">347 km</div></div><div><div class="sl">Cruce</div><div class="sv">Calais → St. Stephen NB</div></div></div>
-        <div class="sno">⚠️ Cruce Calais/St. Stephen (NO Campobello). Pasaportes con visa estampada.</div>
-        <div class="sts"><span class="tp c">NB Mayo: 12–20°C</span></div>
-        <div class="sc">⛺ Provincial parks NB: $15–22 CAD/noche</div>
+        <div class="sno">⚠️ Cruce Calais→St. Stephen NB (NO Campobello). Visa canadiense estampada.</div>
+        <div class="sts"><span class="tp c">NB Mayo: 12–20°C</span><span class="tp c">Noche: 5–10°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Costos 4 días</div>
+          <div class="tc-row"><div class="tc-mode">⛺ Provincial parks NB</div><div class="tc-price">$15–22 CAD/noche</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 4 días</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$160–200 CAD</div></div>
+        </div>
+        <div class="sf">🫎 NB: 400 colisiones alce/año</div>
         <button class="sgoto" onclick="goMap('moncton',[46.09,-64.78]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,null,[45.50,-73.57])">
-      <div class="srt"><div><span class="sn">#04</span><span class="sm">Moncton → Montréal · VIA Rail "The Ocean"</span><div class="sd2">~22 Mayo · 9 horas · ~650 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <!-- #04 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#04</span><span class="sm">Moncton → Montréal · VIA Rail "The Ocean"</span><div class="sd2">~22 Mayo · 1 día · ~650 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
       <div class="sdet">
-        <div class="sno">Vagón equipajes, bicis sin caja. Sale lun/mié/vie. Llega Gare Centrale Montréal.</div>
+        <div class="sno">ÚNICA opción pública que cruza la frontera NB-Quebec. Maritime Bus NO cruza. Sale lun/mié/vie. Vagón equipajes, bicis sin caja.</div>
         <div class="sts"><span class="tp m">Montréal Mayo: 18–24°C</span></div>
-        <div class="sc">🚆 Economy 2p: ~$180–260 CAD + $50 bicis · Total: ~$170–230 USD</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚆 VIA Ocean economy</div><div class="tc-price">$180–260 CAD + $50 bicis <span class="tc-best">ÚNICA OPCIÓN</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Maritime Bus (solo hasta frontera)</div><div class="tc-price">$73–98 CAD (no cruza)</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$230–310 CAD</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón desde Moncton</div>Técnicamente posible pero la frontera provincial complica el transporte. Mejor no depender del aventón para este tramo — VIA Rail es la solución limpia.</div>
         <button class="sgoto" onclick="goMap(null,[45.50,-73.57]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'mtl_qc',[46.81,-71.21])">
-      <div class="srt"><div><span class="sn">#05</span><span class="sm">🚲 Montréal → Québec City · Route Verte</span><div class="sd2">23–26 Mayo · 4 días · 254 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
+    <!-- #05 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#05</span><span class="sm">🚲 Montréal → Québec City · Route Verte</span><div class="sd2">23–26 Mayo · 4 días · 266 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
-        <div class="sno">Route Verte 5 / Chemin du Roy — plana, señalizada, junto al St. Lawrence.</div>
+        <div class="sno">Route Verte 5 / Chemin du Roy — plana, señalizada, junto al St. Lawrence. 500+ establecimientos "Bienvenue cyclistes!"</div>
         <div class="sts"><span class="tp m">Québec Mayo: 16–22°C</span><span class="tp c">Noche: 8–12°C</span></div>
-        <div class="sc">⛺ Camping provincial QC: $20–28 CAD/noche</div>
-        <div class="sf">🪲 BLACK FLIES PICO — red para cabeza + DEET 30%+</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (4 días)</div><div class="tc-price">$80–112 CAD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Orléans Express bus</div><div class="tc-price">$50–116 CAD + $60 bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">🚐 Poparide carpool</div><div class="tc-price">$40–70 CAD (negociar bici)</div></div>
+        </div>
+        <div class="sf">🪲 BLACK FLIES PICO — red cabeza + DEET 30%+</div>
         <button class="sgoto" onclick="goMap('mtl_qc',[46.81,-71.21]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'qc_tor',[45.42,-75.70])">
+    <!-- #06 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#06</span><span class="sm">🚲 Québec City → Ottawa → Toronto</span><div class="sd2">27 Mayo–8 Jun · 13 días · 895 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">895 km</div></div><div><div class="sl">Días</div><div class="sv">~13 días</div></div></div>
-        <div class="sno">Route Verte → Ottawa → Lake Ontario Waterfront Trail → Toronto. Alt. tren: VIA MTL→TOR — confirmar bicis en viarail.ca (1-888-842-7245).</div>
+        <div class="sno">Route Verte rive sud → Ottawa → Lake Ontario Waterfront Trail → Toronto. 600+ km de senderos ciclistas.</div>
         <div class="sts"><span class="tp w">Toronto Junio: 22–28°C</span><span class="tp m">Noche: 12–16°C</span></div>
-        <div class="sc">⛺ Camping: $12–28 CAD/noche · Alt. tren: ~$80–125 CAD/p + $25 bici</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (13 días)</div><div class="tc-price">$312–728 CAD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚆 VIA Rail MTL→TOR</div><div class="tc-price">$160–250 CAD + $50 bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Ontario Northland</div><div class="tc-price">~$320 CAD + $50 bicis</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón tramos aburridos</div>Ottawa→Toronto en Hwy 401 — mucho tráfico comercial. Truck stops en Kingston o Oshawa. Ahorra 2–3 días si la pradera los apura.</div>
         <button class="sgoto" onclick="goMap('qc_tor',[45.42,-75.70]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,null,[49.90,-97.14])">
+    <!-- #07 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#07</span><span class="sm">Toronto → Winnipeg · VIA Rail "The Canadian"</span><div class="sd2">~10 Jun · 2 noches · ~2.200 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
       <div class="sdet">
-        <div class="sno">Tren más icónico de Canadá. Mar/Jue/Sáb. Vagón equipajes sin caja. Reservar 6–8 semanas antes.</div>
-        <div class="sc">🚆 Economy 2p: ~$130–200 CAD/p + $50 bicis · Total: ~$230–335 USD</div>
+        <div class="sno">El tren más icónico de Canadá. Mar/Jue/Sáb. Reservar 6–8 semanas antes. Vagón equipajes sin caja.</div>
+        <div class="sts"><span class="tp w">Pradera llegando: 20–26°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚆 VIA Canadian economy</div><div class="tc-price">$260–400 CAD + $50 bicis <span class="tc-best">MEJOR VALOR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Ontario Northland bus</div><div class="tc-price">$412–600 CAD + $50 bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis VIA</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$310–450 CAD</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón Toronto→Winnipeg</div>Hwy 17 al norte del Lago Superior — poco tráfico pero culturalmente aceptado. Comunidades rurales de Ontario muy solidarias. Para 2 bicis cargadas: van o pickup grande. Puede tomar 2–4 días dependiendo de la suerte.</div>
         <button class="sgoto" onclick="goMap(null,[49.90,-97.14]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'wpg_mel',[50.93,-102.81])">
+    <!-- #08 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#08</span><span class="sm">🌾 Winnipeg → Melville, SK · Pradera</span><div class="sd2">12–18 Jun · 6 días · 464 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
-        <div class="sno">Hwy 16 Yellowhead — cielos infinitos, silos de grano. Vientos 15–20 km/h. Tormentas eléctricas frecuentes.</div>
+        <div class="sno">Hwy 16 Yellowhead — cielos infinitos, silos de grano. Vientos 15–20 km/h. Tormentas eléctricas frecuentes. Pueblos cada 50+ km.</div>
         <div class="sts"><span class="tp w">Pradera Junio: 24–28°C</span><span class="tp m">Noche: 10–14°C</span></div>
-        <div class="sc">⛺ Camping municipal: $10–15 CAD/noche</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (6 días)</div><div class="tc-price">$60–90 CAD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Rider Express WPG→Saskatoon</div><div class="tc-price">$160–240 CAD + $100 bicis</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón en la Pradera — EL MEJOR TRAMO</div>La pradera es el territorio clásico del autoestop en Canadá. Camioneros agrícolas y locales van de ciudad en ciudad. Historia UY→Alaska funciona perfectamente aquí. Para 2 bicis: pickup truck con caja abierta o camioneta agrícola. Muy probable conseguir en gasolineras en las afueras de Winnipeg (Hwy 1 W o Hwy 16 W).</div>
         <button class="sgoto" onclick="goMap('wpg_mel',[50.93,-102.81]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,null,[52.87,-118.08])">
+    <!-- #09 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#09</span><span class="sm">Melville, SK → Jasper, AB · The Canadian</span><div class="sd2">~19 Jun · 1 noche · ~1.400 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
       <div class="sdet">
-        <div class="sno">Pradera → Edmonton → Rocallosas → Jasper NP. Comprar segmento Melville→Jasper en viarail.ca.</div>
-        <div class="sc">🚆 Economy 2p: ~$95–150 CAD/p + $50 bicis · Total: ~$178–260 USD</div>
-        <div class="sf">🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio</div>
+        <div class="sno">Pradera → Edmonton → Rocallosas → Jasper NP. Comprar segmento separado Melville→Jasper en viarail.ca.</div>
+        <div class="sts"><span class="tp m">Jasper Junio: 16–22°C</span><span class="tp c">Noche: 4–8°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚆 VIA Canadian Mel→Jasper</div><div class="tc-price">$190–300 CAD + $50 bicis <span class="tc-best">MEJOR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Rider Express + Cold Shot</div><div class="tc-price">$304–392 CAD + $150 bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis VIA</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$240–350 CAD</div></div>
+        </div>
+        <div class="sf">🦌 Elk en Jasper NP · 🐻 Grizzly — bear spray obligatorio desde aquí</div>
         <button class="sgoto" onclick="goMap(null,[52.87,-118.08]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,null,[55.25,-127.58])">
-      <div class="srt"><div><span class="sn">#10</span><span class="sm">Jasper → New Hazelton, BC · VIA "The Skeena"</span><div class="sd2">~20–22 Jun · 2 días · ~1.160 km</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
+    <!-- #10 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#10</span><span class="sm">Jasper → New Hazelton, BC · VIA "The Skeena"</span><div class="sd2">~20–22 Jun · 2 días + noche Prince George</div></div><span class="sb" style="background:var(--amber);color:var(--dark)">🚆 VIA RAIL</span></div>
       <div class="sdet">
-        <div class="sno">⚠️ Parada OBLIGATORIA en Prince George — noche en camping (~$30 CAD). Sale mar/jue/sáb.</div>
-        <div class="sc">🚆 Skeena Economy 2p: ~$130–200 CAD/p + $50 bicis + camping PG<br>Total: ~$310–430 USD</div>
+        <div class="sno">Uno de los trenes más espectaculares de Canadá. ⚠️ Parada OBLIGATORIA Prince George — noche camping ~$30 CAD. Sale mar/jue/sáb.</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚆 VIA Skeena economy</div><div class="tc-price">$260–400 CAD + $50 + $30 noche PG <span class="tc-best">ÚNICA OPCIÓN DIRECTA</span></div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$340–480 CAD</div></div>
+        </div>
         <button class="sgoto" onclick="goMap(null,[55.25,-127.58]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'cassiar_n',[58.43,-130.03])">
+    <!-- #11 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#11</span><span class="sm">🏔️ New Hazelton → Watson Lake · Cassiar Hwy</span><div class="sd2">24 Jun–6 Jul · 13 días · 799 km reales</div></div><span class="sb" style="background:var(--dh);color:white">🐻 FAUNA</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">799 km</div></div><div><div class="sl">Superficie</div><div class="sv">99% pavimento</div></div></div>
+        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">799 km</div></div><div><div class="sl">Gap sin servicio</div><div class="sv">Bell 2→Dease: 157 km</div></div></div>
         <div class="sno">Cassiar Hwy 37 — ruta épica. Jade City km 575: hospitalidad a ciclistas. Sin cobertura celular → Starlink/InReach esencial.</div>
         <div class="sts"><span class="tp m">Cassiar Julio: 16–22°C</span><span class="tp c">Noche: 5–10°C</span></div>
-        <div class="sc">⛺ Crown Land BC: gratis</div>
-        <div class="sf">🐻 EXTREMO: "Más osos que personas" · 🫎 ALTO: alce · 🐺 Lobos · 🦟 Mosquitos extremos</div>
+        <div class="tc"><div class="tc-title">💰 Opciones de transporte (sin transporte programado directo)</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici completa (13 días)</div><div class="tc-price">$156–286 CAD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 BC Bus North PG→New Hazelton</div><div class="tc-price">$90–160 CAD + bicis · 2x/sem</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Shuttle Smithers↔Dease Lake</div><div class="tc-price">GRATIS · Tel: 250-847-5211</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Gitanmaax Band Shuttle</div><div class="tc-price">GRATIS · Tel: 250-842-5297</div></div>
+          <div class="tc-row"><div class="tc-mode">⚠️ Dease Lake→Watson Lake (270 km)</div><div class="tc-price" style="color:#F87171">SIN TRANSPORTE</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón en la Cassiar — MUY VIABLE en verano</div>RVs y aventureros activos en julio-agosto. Parar en Bell 2 Lodge y Jade City City — puntos naturales de pausa. La historia UY→Alaska genera mucha simpatía entre los viajeros del norte. Para 2 bicis cargadas: van o pickup con caja. Dease Lake→Watson Lake (270 km sin nada) es donde el aventón salva más tiempo y energía.</div>
+        <div class="sf">🐻 EXTREMO · 🫎 Alce mortal · 🐺 Lobos · 🦟 Mosquitos extremos</div>
         <button class="sgoto" onclick="goMap('cassiar_n',[58.43,-130.03]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'watson_fbk',[60.72,-135.06])">
+    <!-- #12-13 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#12–13</span><span class="sm">🚲 Watson Lake → Whitehorse → Fairbanks</span><div class="sd2">7–27 Jul · 20 días · 1.392 km reales</div></div><span class="sb" style="background:var(--fire);color:var(--bg)">🚲 BICI</span></div>
       <div class="sdet">
         <div class="sg"><div><div class="sl">Km reales</div><div class="sv">1.392 km</div></div><div><div class="sl">Cruce frontera</div><div class="sv">Beaver Creek → Tok AK</div></div></div>
-        <div class="sno">Watson Lake: "Bosque de Señales" (foto obligatoria). Whitehorse: comprar bear spray (~$40 CAD). Cruce Alaska Highway en Beaver Creek (24/7). En Fairbanks: revisión total + 7 días comida para la Dalton.</div>
+        <div class="sno">Watson Lake: "Bosque de Señales" (foto obligatoria). Whitehorse: comprar bear spray (~$40 CAD). En Fairbanks: revisión total + 7 días comida para la Dalton.</div>
         <div class="sts"><span class="tp w">Yukón Julio: 18–24°C</span><span class="tp w">22 horas de luz</span></div>
-        <div class="sc">⛺ Campings Yukón: $12 CAD/noche · 🐻 Bear spray: ~$40 CAD</div>
-        <div class="sf">🦬 BISONTES km 750–900 · 🐺 Ataque lobo documentado 2013 · ⚠️ Liard Hot Springs km 765</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (20 días)</div><div class="tc-price">$240–480 CAD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Watson Lake Shuttle (First Nations)</div><div class="tc-price">$256–298 CAD · lun/mié/vie · Tel: 867-689-0540</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Alaska Direct Bus (Whitehorse→Fairbanks)</div><div class="tc-price">~$220 USD/2p</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón Whitehorse→Tok</div>Alaska Hwy — ruta clásica de aventoneros en verano. Mucho tráfico de RVs americanos y canadienses regresando a Alaska. Tok es buen punto de escala. La historia UY→Alaska funciona perfectamente aquí.</div>
+        <div class="sf">🦬 BISONTES km 750–900 · 🐺 Lobo 2013 · ⚠️ Liard Hot Springs km 765</div>
         <button class="sgoto" onclick="goMap('watson_fbk',[60.72,-135.06]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'dalton',[67.25,-150.68])">
+    <!-- #14 -->
+    <div class="sr" onclick="tS(this)">
       <div class="srt"><div><span class="sn">#14</span><span class="sm">🏔️ Fairbanks → PRUDHOE BAY 🏁 · Dalton Hwy</span><div class="sd2">28 Jul–10 Ago · 14 días · 798 km reales</div></div><span class="sb" style="background:var(--dx);color:white">⚠️ DALTON</span></div>
       <div class="sdet">
         <div class="sg"><div><div class="sl">Km reales</div><div class="sv">798 km</div></div><div><div class="sl">Atigun Pass</div><div class="sv">1.444m · 12% grade</div></div><div><div class="sl">Sin servicios</div><div class="sv">388 km (Coldfoot→)</div></div><div><div class="sl">Grava</div><div class="sv">75% del tramo</div></div></div>
-        <div class="sno">⚠️ MÁXIMA EXIGENCIA. Coldfoot km 280: ÚLTIMO servicio. Cargar 7 días de comida. InReach OBLIGATORIO.</div>
-        <div class="sts"><span class="tp c">Prudhoe Bay Ago: 10–12°C</span><span class="tp f">Noche: 4–6°C</span><span class="tp f">Atigun Pass: sensación -5°C</span></div>
-        <div class="sc">🌊 Arctic Ocean Shuttle: $89/p · 🏕️ Coldfoot shower: $14 · ⛺ BLM: gratis</div>
-        <div class="sf">🐻 EXTREMO tundra · 🫎 EXTREMO 800+ col./año · 🦟 EXTREMO 17 billones mosquitos/año</div>
-        <div class="sni">❄️ LÍMITE: salir antes 20 Ago. El Niño 2026 no beneficia el North Slope.</div>
+        <div class="sno">⚠️ MÁXIMA EXIGENCIA. Coldfoot km 280: ÚLTIMO servicio. Cargar 7 días comida. InReach OBLIGATORIO.</div>
+        <div class="sts"><span class="tp c">Prudhoe Bay Ago: 10–12°C</span><span class="tp f">Noche: 4–6°C</span><span class="tp f">Nieve posible cualquier día</span></div>
+        <div class="tc"><div class="tc-title">💰 Opciones de transporte</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (14 días)</div><div class="tc-price">~$200 USD BLM gratis <span class="tc-best">MÁS ECONÓMICO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Dalton Highway Express FBK→Deadhorse</div><div class="tc-price" style="color:#F87171">$870 USD (2p) <span class="tc-warn">EVITAR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Dalton Express FBK→Coldfoot (solo)</div><div class="tc-price">$312 USD (2p) · si necesitan ayuda</div></div>
+          <div class="tc-row"><div class="tc-mode">✈️ Alaska Airlines FBK→Deadhorse</div><div class="tc-price">$150–840 USD (2p) · no bear spray</div></div>
+          <div class="tc-row"><div class="tc-mode">🌊 Arctic Ocean Shuttle (llegando)</div><div class="tc-price">$178 USD (2p) · obligatorio</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón en la Dalton — MUY DIFÍCIL</div>Camioneros petroleros tienen prohibición empresarial de llevar pasajeros. Pocos vehículos privados. NO contar con esto. La bici es la opción correcta para este tramo.</div>
+        <div class="sf">🐻 EXTREMO tundra · 🫎 EXTREMO 800+ col./año · 🦟 EXTREMO 17 billones/año</div>
+        <div class="sni">❄️ LÍMITE: salir Prudhoe Bay ANTES del 20 Ago. El Niño 2026 no beneficia el North Slope.</div>
         <button class="sgoto" onclick="goMap('dalton',[67.25,-150.68]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
     <div class="ph r">▼ REGRESO SUR — ~10 Ago → ~21 Sep</div>
 
-    <div class="sr" onclick="tS(this,'return_anc',[61.22,-149.90])">
-      <div class="srt"><div><span class="sn">#15–16</span><span class="sm">↩️ Prudhoe Bay → Fairbanks → Anchorage</span><div class="sd2">~10–30 Ago · 21 días · 1.377 km reales</div></div><span class="sb" style="background:var(--rose);color:white">🚲 REGRESO</span></div>
+    <!-- #15 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#15</span><span class="sm">↩️ Prudhoe Bay → Fairbanks · Dalton regreso</span><div class="sd2">~10–20 Ago · 11 días · 650 km</div></div><span class="sb" style="background:var(--rose);color:white">🚲 REGRESO</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">1.377 km</div></div><div><div class="sl">Ruta</div><div class="sv">Dalton + Parks Hwy</div></div></div>
-        <div class="sno">Dalton de regreso + Parks Highway hasta Anchorage. Vistas del Denali (6.190m). Si hay retraso: Bus Dalton Express ~$420 USD (2p) ahorra 10 días.</div>
-        <div class="sts"><span class="tp c">Agosto tardío: 8–18°C</span><span class="tp f">Noche: 1–10°C</span></div>
-        <div class="sc">⛺ State/BLM camping: gratis–$20 · 🚌 Alt. bus Dalton: ~$420 USD</div>
+        <div class="sno">Regreso por la Dalton. Temperatura baja rápido.</div>
+        <div class="sts"><span class="tp c">Agosto tardío: 8–14°C</span><span class="tp f">Noche: 1–5°C</span><span class="tp f">Sensación: -8°C con viento</span></div>
+        <div class="tc"><div class="tc-title">💰 Si necesitan saltar el regreso por tiempo</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (11 días)</div><div class="tc-price">~$100 USD BLM gratis <span class="tc-best">MEJOR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Dalton Express Deadhorse→Fairbanks</div><div class="tc-price" style="color:#F87171">$870 USD (2p) <span class="tc-warn">EVITAR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">✈️ Alaska Airlines Deadhorse→Fairbanks</div><div class="tc-price">$150–400 USD (2p) · opción de emergencia</div></div>
+        </div>
         <button class="sgoto" onclick="goMap('return_anc',[61.22,-149.90]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,null,[60.72,-135.06])">
-      <div class="srt"><div><span class="sn">#17</span><span class="sm">Anchorage → Whitehorse · Bus</span><div class="sd2">~31 Ago · 1–2 días · ~900 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
+    <!-- #16 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#16</span><span class="sm">🚲 Fairbanks → Anchorage · Parks Highway</span><div class="sd2">~21–30 Ago · 10 días · 580 km reales</div></div><span class="sb" style="background:var(--rose);color:white">🚲 REGRESO</span></div>
       <div class="sdet">
-        <div class="sno">⚠️ Confirmar antes de salir — servicio irregular. Alt: pedalear Anchorage→Tok y tomar bus en Tok.</div>
-        <div class="sc">🚌 Bus Anch→Whitehorse: ~$200–250 USD/p + ~$25 bicis · Total: ~$450–550 USD</div>
+        <div class="sno">Parks Highway — una de las rutas más bellas de Alaska. Vistas del Denali (6.190m).</div>
+        <div class="sts"><span class="tp m">Agosto: 14–18°C</span><span class="tp c">Noche: 7–10°C</span></div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚲 Bici (10 días)</div><div class="tc-price">$200–400 USD camp. <span class="tc-best">MÁS BARATO</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Alaska/Yukon Trails FBK→ANC</div><div class="tc-price">~$198 USD (2p) · lleva tráiler bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">🚂 Alaska Railroad FBK→ANC</div><div class="tc-price" style="color:#F87171">$608 USD (2p+bicis) <span class="tc-warn">EVITAR</span></div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón Parks Highway</div>RVs regresando al sur en agosto — muy activo. La historia UY→Alaska es irresistible para los viajeros de aventura. Buenas paradas en Denali NP, Talkeetna y Wasilla.</div>
+        <div class="sf">🫎 ALTO 2026: ataques alces Anchorage · 🐻 Grizzly Parks Hwy</div>
+        <button class="sgoto" onclick="goMap('return_anc',[61.22,-149.90]);event.stopPropagation()">🗺 Ver en mapa →</button>
+      </div>
+    </div>
+
+    <!-- #17 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#17</span><span class="sm">Anchorage → Whitehorse · Bus local</span><div class="sd2">~31 Ago · 1–2 días · ~900 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
+      <div class="sdet">
+        <div class="sno">⚠️ CONFIRMAR antes de salir — servicio irregular. Llamar para confirmar bicis cargadas.</div>
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚌 Alaska Direct Bus ANC→TOK→YXY</div><div class="tc-price">~$480 USD (2p) · mié/vie/dom</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Interior AK Bus ANC→Tok + Alaska Direct Tok→YXY</div><div class="tc-price">~$480 USD (2p) · más flexible</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$480–550 USD</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón ANC→Whitehorse — MUY VIABLE</div>Agosto-septiembre: toneladas de RVs americanos regresando a casa por la Alaska Hwy. Este es el mejor momento del año para aventonarse en esta dirección. Glenn Highway → Tok → Alaska Hwy → Whitehorse. Gasolineras en bordes de Anchorage con cartel bien visible. Para 2 bicis: van o RV con bodega. La historia UY→Alaska→regreso en este punto es irresistible.</div>
         <button class="sgoto" onclick="goMap(null,[60.72,-135.06]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
-    <div class="sr" onclick="tS(this,'return_van',[55.25,-127.58])">
-      <div class="srt"><div><span class="sn">#18–19</span><span class="sm">🚲 Whitehorse → Prince George → Vancouver</span><div class="sd2">1–21 Sep · ⚠️ antes 20 Sep · 2.415 km reales</div></div><span class="sb" style="background:var(--dh);color:white">⚠️ VENTANA</span></div>
+    <!-- #18 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#18</span><span class="sm">🚲 Whitehorse → Prince George · Cassiar Sur</span><div class="sd2">1–20 Sep · ⚠️ ANTES 20 Sep · 1.165+ km</div></div><span class="sb" style="background:var(--dh);color:white">⚠️ VENTANA</span></div>
       <div class="sdet">
-        <div class="sg"><div><div class="sl">Km reales</div><div class="sv">2.415 km</div></div><div><div class="sl">Límite</div><div class="sv">20 Sep en Cassiar</div></div></div>
-        <div class="sno">⚠️ VENTANA CRÍTICA: No pasar el 20 Sep en la Cassiar (El Niño 2026 +5 días). Último tramo: Prince George → Vancouver en ebus.ca (~$120–185 USD).</div>
+        <div class="sno">⚠️ VENTANA CRÍTICA: No pasar el 20 Sep en la Cassiar. Otoño = colores increíbles para el canal.</div>
         <div class="sts"><span class="tp c">Cassiar Sep: 8–15°C</span><span class="tp f">Madrugada: 0–3°C</span><span class="tp f">Nieve posible en pasos</span></div>
-        <div class="sc">⛺ Crown Land: gratis · 🚌 ebus PG→Vancouver: ~$120–185 USD</div>
-        <div class="sf">🐻 Grizzly pre-hibernación · 🫎 Alce en celo Sep–Oct</div>
-        <div class="sni">❄️ El Niño 2026 extiende ventana hasta ~20 Sep. Dease Lake: nieve promedio desde 23 Sep.</div>
+        <div class="tc"><div class="tc-title">💰 Opciones por tramo</div>
+          <div class="tc-row"><div class="tc-mode">🚌 Watson Lake Shuttle (YXY→Watson Lake)</div><div class="tc-price">$256–298 CAD (2p) · lun/mié/vie</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Shuttle Dease Lake↔Smithers</div><div class="tc-price">GRATIS · 250-847-5211</div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 BC Bus North (Dease Lake→PG)</div><div class="tc-price">$106–142 CAD (2p) · 2x/sem</div></div>
+          <div class="tc-row"><div class="tc-mode">⚠️ Watson Lake→Dease Lake (270 km)</div><div class="tc-price" style="color:#F87171">SIN TRANSPORTE — bici o dedo</div></div>
+        </div>
+        <div class="aven"><div class="aven-title">🚐 Aventón Cassiar Sur — Otoño es buen momento</div>Menos tráfico que julio-agosto pero los que van son aventureros — más propensos a ayudar. RVs europeos terminando su verano. La Cassiar en colores de otoño es contenido épico para el canal — usar eso para conectar con viajeros en campings y gasolineras.</div>
+        <div class="sf">🐻 Grizzly pre-hibernación más agresivos · 🫎 Alce en celo Sep–Oct</div>
+        <div class="sni">❄️ El Niño 2026: ventana extendida hasta ~20 Sep. Dease Lake: nieve promedio 23 Sep.</div>
         <button class="sgoto" onclick="goMap('return_van',[55.25,-127.58]);event.stopPropagation()">🗺 Ver en mapa →</button>
       </div>
     </div>
 
+    <!-- #19 -->
+    <div class="sr" onclick="tS(this)">
+      <div class="srt"><div><span class="sn">#19</span><span class="sm">Prince George → Vancouver · Bus</span><div class="sd2">~21 Sep · 1 día · ~780 km</div></div><span class="sb" style="background:var(--ink2);color:var(--bg)">🚌 BUS</span></div>
+      <div class="sdet">
+        <div class="tc"><div class="tc-title">💰 Comparador 2 personas + 2 bicis</div>
+          <div class="tc-row"><div class="tc-mode">🚌 EBus PG→Vancouver</div><div class="tc-price">$298–326 CAD + $40–60 bicis <span class="tc-best">MEJOR</span></div></div>
+          <div class="tc-row"><div class="tc-mode">🚌 Rider Express PG→Vancouver</div><div class="tc-price">$178–240 CAD + $100 bicis</div></div>
+          <div class="tc-row"><div class="tc-mode">🚐 Poparide PG→Vancouver</div><div class="tc-price">$100–158 CAD (negociar bici)</div></div>
+          <div class="tc-row"><div class="tc-mode">💰 Total 2p+bicis EBus</div><div class="tc-price" style="color:var(--fire);font-weight:700">~$338–386 CAD</div></div>
+        </div>
+        <button class="sgoto" onclick="goMap('return_van',[49.28,-123.12]);event.stopPropagation()">🗺 Ver en mapa →</button>
+      </div>
+    </div>
+
+    <!-- RESUMEN ECONOMICO -->
+    <div style="background:var(--dark);padding:12px;margin-top:2px">
+      <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--bg);margin-bottom:10px">💰 Resumen económico total — Transporte terrestre 2 personas</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+        <div style="background:#2E1E08;border-radius:6px;padding:8px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Solo transporte pagado</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--fire)">$3.800–5.200</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bg4)">USD+CAD mixto</div>
+        </div>
+        <div style="background:#001500;border-radius:6px;padding:8px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:#86EFAC;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Con aventones estratégicos</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#86EFAC">$2.000–2.800</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#4A7530">USD+CAD mixto</div>
+        </div>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);line-height:1.9">
+        🚐 MEJORES TRAMOS PARA AVENTÓN:<br>
+        ✅ Pradera Saskatchewan (agosto/verano)<br>
+        ✅ Anchorage→Whitehorse (RVs regresando sep)<br>
+        ✅ Cassiar Hwy (verano — RVs aventureros)<br>
+        ✅ Parks Highway Fairbanks→Anchorage<br>
+        ✅ Toronto→Winnipeg Hwy 17 (norte del lago Superior)<br><br>
+        ❌ NO CONTAR CON AVENTÓN EN:<br>
+        🚫 Dalton Highway (prohibición empresarial camioneros)<br>
+        🚫 NB→Quebec frontera provincial (VIA Rail obligatorio)
+      </div>
+    </div>
+
     <div class="ph b">⬇️ Ver pestaña BAJADA para la ruta Vancouver → México</div>
+    <div style="padding:10px 12px;font-size:11px;color:var(--ink2);background:var(--bg)">Ver <strong style="color:var(--fire)">⬇️ Bajada</strong> para las 3 opciones de ruta hacia México.</div>
   </div>
+
   <!-- FAUNA -->
   <div id="pane-fa" class="pane">
     <div class="fi">Fauna por zona de norte a sur. <strong>Los alces matan más que los osos</strong> en Canadá y Alaska. En el sur: víboras, escorpiones y perros ferales.</div>
